@@ -107,7 +107,7 @@ const ProductCartd = ({
             <TbCurrencyTaka />
             <p className="">{price}</p>
             <div className="text-sm space-x-5 ml-10 font-normal font-openSans">
-              <button className="py-[2px] px-2 border rounded-full focus:bg-white focus:text-purple-500 duration-300 ">
+              <button className="py-[2px] px-2 border rounded-full bg-white text-purple-500 duration-300 ">
                 1 kgs
               </button>
               <button className="py-[2px] px-2 border rounded-full focus:bg-white focus:text-purple-500 duration-300 ">
@@ -129,10 +129,10 @@ const ProductCartd = ({
             LEARN MORE
           </a>
           <div className="flex items-center gap-5 font-openSans text-sm">
-            <button className=" border-2 border-white bg-white rounded-full px-8 py-[10px] text-purple-500">
+            <button className=" border-2 border-white bg-white rounded-full px-8 py-[10px] text-purple-500 hover:scale-110 duration-300">
               BUY NOW
             </button>
-            <button className=" border-2 border-white text-white rounded-full px-8 py-[10px]">
+            <button className=" border-2 border-white text-white rounded-full px-8 py-[10px] hover:scale-110 duration-300">
               ADD TO CART
             </button>
           </div>
