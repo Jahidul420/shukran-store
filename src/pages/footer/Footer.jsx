@@ -1,13 +1,14 @@
 import React from "react";
 import {
-    AiFillYoutube,
-    AiOutlineInstagram,
-    AiOutlineTwitter
+  AiFillYoutube,
+  AiOutlineInstagram,
+  AiOutlineTwitter
 } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { GrAppleAppStore } from "react-icons/gr";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import pattern from "../../assets/pattern.png";
 import Logo from "../../assets/shukranLogo.png";
 const Footer = () => {
@@ -24,7 +25,7 @@ const Footer = () => {
         <LastDiv />
       </div>
       <div className="py-20 text-center text-white">
-        <a href="#">Copyright © 2023 Shukran. All rights reserved</a>
+        <Link to="/">Copyright © 2023 Shukran. All rights reserved</Link>
       </div>
     </div>
   );
@@ -33,39 +34,40 @@ const Footer = () => {
 export default Footer;
 
 const FirstDiv = () => {
+  const IconArr = [
+    { icon: <BsFacebook />, to: "/" },
+    { icon: <AiFillYoutube />, to: "/" },
+    { icon: <AiOutlineTwitter />, to: "/" },
+    { icon: <FaLinkedinIn />, to: "/" },
+    { icon: <AiOutlineInstagram />, to: "/" },
+  ];
   return (
     <div className="w-[30%]">
-      <h2 className="text-4xl text-white font-zen mb-5">FOLLOW US</h2>
+      <h2 className="text-4xl text-white font-zen mb-8">FOLLOW US</h2>
       <div className="flex justify-between ie text-white text-5xl items-center group">
-        <a href="#">
-          <BsFacebook className=" hover:scale-150 duration-300 hover:drop-shadow-[0_0px_10px_rgb(255,255,255,0.7)]" />
-        </a>
-        <a href="#">
-          <AiFillYoutube className=" hover:scale-150 duration-300 hover:drop-shadow-[0_0px_10px_rgb(255,255,255,0.7)]" />
-        </a>
-        <a href="#">
-          <AiOutlineTwitter className=" hover:scale-150 duration-300 hover:drop-shadow-[0_0px_10px_rgb(255,255,255,0.7)]" />
-        </a>
-        <a href="#">
-          <FaLinkedinIn className=" hover:scale-150 duration-300 hover:drop-shadow-[0_0px_10px_rgb(255,255,255,0.7)]" />
-        </a>
-        <a href="#">
-          <AiOutlineInstagram className=" hover:scale-150 duration-300 hover:drop-shadow-[0_0px_10px_rgb(255,255,255,0.7)]" />
-        </a>
+        {IconArr.map((item, index) => (
+          <Link
+            to={item.to}
+            key={index}
+            className=" hover:scale-150 duration-300 hover:drop-shadow-[0_0px_10px_rgb(255,255,255,0.7)]"
+          >
+            {item.icon}
+          </Link>
+        ))}
       </div>
       <div className="text-xs text-white space-x-5 mt-2">
-        <a href="#" className="border-b">
+        <Link to="/" className="border-b">
           PRIVACY & TERMS
-        </a>
-        <a href="#" className="border-b">
+        </Link>
+        <Link to="/" className="border-b">
           PARTNERSHIPS
-        </a>
-        <a href="#" className="border-b">
+        </Link>
+        <Link to="/" className="border-b">
           +88 017 0000 0000
-        </a>
-        <a href="#" className="border-b">
+        </Link>
+        <Link to="/" className="border-b">
           CONTACT US
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -86,16 +88,14 @@ const LastDiv = () => {
     <div className="w-[30%] text-white">
       <div className=" space-y-5 md:mt-8 mt-4">
         <div className="flex items-center justify-between w-full">
-          <div className="py-3 px-2 rounded-lg border-2 border-white ">
-            <button className="flex items-center text-xl font-semibold justify-between w-full">
-              <IoLogoGooglePlaystore className="text-3xl" /> Google Play Store
-            </button>
-          </div>
-          <div className="py-3 px-2 rounded-lg border-2 border-white ">
-            <button className="flex items-center text-xl font-semibold justify-between w-full">
-              <GrAppleAppStore className="text-3xl" /> Apple App Store
-            </button>
-          </div>
+          <AppStore
+            icon={<IoLogoGooglePlaystore className="text-3xl" />}
+            storeName="Google Play Store"
+          />
+          <AppStore
+            icon={<GrAppleAppStore className="text-3xl" />}
+            storeName="Apple App Store"
+          />
         </div>
 
         <div className="w-full flex items-center">
@@ -114,6 +114,17 @@ const LastDiv = () => {
         the Shukran
         <button className="border-b"> Terms & Conditions</button>
       </p>
+    </div>
+  );
+};
+
+const AppStore = ({ icon, storeName }) => {
+  return (
+    <div className="py-3 px-2 rounded-lg border-2 border-white ">
+      <button className="flex items-center text-xl font-semibold justify-between w-full">
+        {icon}
+        {storeName}
+      </button>
     </div>
   );
 };

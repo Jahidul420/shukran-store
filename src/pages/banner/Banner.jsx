@@ -3,7 +3,7 @@ import rice from "../../assets/rice.mp4";
 import logo from "../../assets/shukranLogo.png";
 const Banner = () => {
   return (
-    <div className=" -mt-32 relative h-[100vh] w-full">
+    <div className=" -mt-16 relative h-[100vh] w-full">
       <video
         src={rice}
         autoPlay
@@ -18,7 +18,7 @@ const Banner = () => {
             <img src={logo} alt="" className="h-full m-auto object-cover" />
         </div>
         <div className="text-center w-[85%] m-auto">
-          <h2 className="text-[80px] text-white font-zen">
+          <h2 className="text-[80px] text-white font-zen tracking-tighter">
             WHAT ARE YOUR GREATEFUL FOR TODAY
           </h2>
           <button className="px-10 py-4 mt-20 bg-white  text-black rounded-full hover:scale-110 duration-500">

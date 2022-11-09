@@ -4,6 +4,7 @@ import { TbCurrencyTaka } from "react-icons/tb";
 import katari from "../../assets/png/katari.png";
 import miniket from "../../assets/png/miniket.png";
 import najirshail from "../../assets/png/najirshail.png";
+import KgButton from "../../component/KgButton";
 const Popular = () => {
   return (
     <div className="bg-purple-800 px-10 py-20">
@@ -64,15 +65,9 @@ const PopularCart = ({ image, productTitle, price }) => {
           <button className="py-[2px] w-14 border rounded-full bg-white text-purple-500 duration-300 ">
             1 kgs
           </button>
-          <button className="py-[2px] w-14 border rounded-full focus:bg-white focus:text-purple-500 duration-300 ">
-            5 kgs
-          </button>
-          <button className="py-[2px] w-14 border rounded-full focus:bg-white focus:text-purple-500 duration-300 ">
-            10 kgs
-          </button>
-          <button className="py-[2px] w-14 border rounded-full focus:bg-white focus:text-purple-500 duration-300 ">
-            25 kgs
-          </button>
+          <KgButton kg={5} />
+          <KgButton kg={10} />
+          <KgButton kg={25} />
         </div>
         <p className="text-md w-[80%] m-auto">
           Lorem Ipsum is simply dummy text of the printing and typesetting
