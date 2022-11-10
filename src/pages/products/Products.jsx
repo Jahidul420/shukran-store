@@ -9,8 +9,8 @@ import KgButton from "../../component/KgButton";
 const Products = () => {
   return (
     
-    <div className=" bg-black text-white px-10 py-20 relative">
-      <div className="bg-[url('./assets/pattern.png')] bg-repeat absolute top-0 left-0 h-full w-full opacity-10"></div>
+    <div className=" bg-[#570A57] text-white px-10 py-20 relative">
+      {/* <div className="bg-[url('./assets/pattern.png')] bg-repeat absolute top-0 left-0 h-full w-full opacity-10"></div> */}
       <div className="w-[60%] m-auto text-center text-5xl font-zen space-y-8 mb-20">
         <h2>MEET THE QUEEN OF ANTIOXIDANTS.</h2>
         <p className=" text-xl font-openSans">
@@ -88,8 +88,8 @@ const ProductCartd = ({
       } justify-between items-center h-[90vh] m-auto my-10`}
     >
       <div className=" w-[50%]">
-        <div className=" p-10 h-[610px] w-[600px] bg-[#350061] rounded-full  relative group">
-          <div className="duration-300 group-hover:scale-105 h-full w-full  rounded-full bg-[#350061] absolute top-0 left-0 transition-all"></div>
+        <div className=" p-10 h-[610px] w-[600px] bg-[#4a094a] rounded-full  relative group">
+          <div className="duration-300 group-hover:scale-105 h-full w-full  rounded-full bg-[#4a094a] absolute top-0 left-0 transition-all"></div>
           <img
             src={image}
             alt=""
@@ -123,7 +123,7 @@ const ProductCartd = ({
           <h2 className="text-xl w-[70%] text-left pb-2 font-zen">
             {discription}
           </h2>
-          <Link to="/" className="text-xs border-b-2 ">
+          <Link to="/product" className="text-xs border-b-2 ">
             LEARN MORE
           </Link>
           <div className="flex items-center gap-5 font-oswald text-sm">

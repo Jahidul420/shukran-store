@@ -13,7 +13,7 @@ import pattern from "../../assets/pattern.png";
 import Logo from "../../assets/shukranLogo.png";
 const Footer = () => {
   return (
-    <div className="bg-purple-800 relative">
+    <div className="bg-[#4a094a] relative">
       <img
         src={pattern}
         alt=""

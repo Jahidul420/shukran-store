@@ -7,7 +7,7 @@ import najirshail from "../../assets/png/najirshail.png";
 import KgButton from "../../component/KgButton";
 const Popular = () => {
   return (
-    <div className="bg-purple-800 px-10 py-20">
+    <div className="bg-[#570A57] px-10 py-20">
       <div className=" text-center text-white font-zen text-5xl my-20">
         <h2 className="w-[60%] m-auto">OUR POPULARS PRODUCTS</h2>
         <p className="text-lg mt-5">
@@ -40,7 +40,7 @@ export default Popular;
 const PopularCart = ({ image, productTitle, price }) => {
   return (
     <div className="bg-red-20 relative group">
-      <div className=" absolute top left-0 w-full h-[470px] rounded-full bg-purple-900 group-hover:scale-105 duration-300 opacity-0 group-hover:opacity-100"></div>
+      <div className=" absolute top left-0 w-full h-[470px] rounded-full bg-[#4a094a] group-hover:scale-105 duration-300 opacity-0 group-hover:opacity-100"></div>
       <div className="h-[400px] my-5 w-full relative">
         <img
           src={image}

@@ -19,7 +19,7 @@ const Banner = () => {
         </div>
         <div className="text-center w-[85%] m-auto">
           <h2 className="text-[80px] text-white font-zen tracking-tighter">
-            WHAT ARE YOUR GREATEFUL FOR TODAY
+            WHAT ARE YOU GREATEFUL FOR TODAY?
           </h2>
           <button className="px-10 py-4 mt-20 bg-white  text-black rounded-full hover:scale-110 duration-500">
             FIND MORE ABOUT US
