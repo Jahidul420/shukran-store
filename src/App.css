@@ -7,3 +7,10 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    scroll-behavior: smooth;
+}

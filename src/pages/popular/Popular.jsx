@@ -4,9 +4,13 @@ import { TbCurrencyTaka } from "react-icons/tb";
 import katari from "../../assets/png/katari.png";
 import miniket from "../../assets/png/miniket.png";
 import najirshail from "../../assets/png/najirshail.png";
+import KgButton from "../../component/KgButton";
 const Popular = () => {
+  // bg-[#570A57]
   return (
-    <div className="bg-purple-800 px-10 py-20">
+    <div className=" px-10 py-20 bg-[#570A57] ">
+      {/* <div className="bg-[url('./assets/pattern.png')] bg-fixed bg-cover bg-no-repeat absolute top-0 left-0 h-full w-full opacity-10"></div> */}
+
       <div className=" text-center text-white font-zen text-5xl my-20">
         <h2 className="w-[60%] m-auto">OUR POPULARS PRODUCTS</h2>
         <p className="text-lg mt-5">
@@ -39,7 +43,7 @@ export default Popular;
 const PopularCart = ({ image, productTitle, price }) => {
   return (
     <div className="bg-red-20 relative group">
-      <div className=" absolute top left-0 w-full h-[470px] rounded-full bg-purple-900 group-hover:scale-105 duration-300 opacity-0 group-hover:opacity-100"></div>
+      <div className=" absolute top left-0 w-full h-[470px] rounded-full bg-[#4a094a] group-hover:scale-105 duration-300 opacity-0 group-hover:opacity-100"></div>
       <div className="h-[400px] my-5 w-full relative">
         <img
           src={image}
@@ -64,15 +68,9 @@ const PopularCart = ({ image, productTitle, price }) => {
           <button className="py-[2px] w-14 border rounded-full bg-white text-purple-500 duration-300 ">
             1 kgs
           </button>
-          <button className="py-[2px] w-14 border rounded-full focus:bg-white focus:text-purple-500 duration-300 ">
-            5 kgs
-          </button>
-          <button className="py-[2px] w-14 border rounded-full focus:bg-white focus:text-purple-500 duration-300 ">
-            10 kgs
-          </button>
-          <button className="py-[2px] w-14 border rounded-full focus:bg-white focus:text-purple-500 duration-300 ">
-            25 kgs
-          </button>
+          <KgButton kg={5} />
+          <KgButton kg={10} />
+          <KgButton kg={25} />
         </div>
         <p className="text-md w-[80%] m-auto">
           Lorem Ipsum is simply dummy text of the printing and typesetting
