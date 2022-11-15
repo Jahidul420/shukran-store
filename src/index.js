@@ -1,11 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import { StoreContextProvider } from "./context/StoreContext";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <StoreContextProvider>
+      <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    </StoreContextProvider>
+    
   </React.StrictMode>
 );
-
