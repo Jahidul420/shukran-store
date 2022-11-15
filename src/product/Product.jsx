@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import rice1 from "../assets/rice1-min.jpg";
 import rice2 from "../assets/rice2-min.jpg";
 import rice3 from "../assets/rice3-min.jpg";
+import rice4 from "../assets/rice4-min.jpg";
 import KgButton from "../component/KgButton";
 import NavBar from "../global/NavBar";
 const Product = () => {
@@ -14,6 +15,7 @@ const Product = () => {
       <div className="flex justify-between w-screen -mt-16 sticky scroll-smooth">
         <div className=" w-[60%] h-auto">
           <BgImage img={rice1} />
+          <BgImage img={rice4} />
           <BgImage img={rice2} />
           <BgImage img={rice3} />
         </div>

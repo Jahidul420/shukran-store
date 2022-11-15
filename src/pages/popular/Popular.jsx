@@ -6,8 +6,11 @@ import miniket from "../../assets/png/miniket.png";
 import najirshail from "../../assets/png/najirshail.png";
 import KgButton from "../../component/KgButton";
 const Popular = () => {
+  // bg-[#570A57]
   return (
-    <div className="bg-[#570A57] px-10 py-20">
+    <div className=" px-10 py-20 bg-[#570A57] ">
+      {/* <div className="bg-[url('./assets/pattern.png')] bg-fixed bg-cover bg-no-repeat absolute top-0 left-0 h-full w-full opacity-10"></div> */}
+
       <div className=" text-center text-white font-zen text-5xl my-20">
         <h2 className="w-[60%] m-auto">OUR POPULARS PRODUCTS</h2>
         <p className="text-lg mt-5">
