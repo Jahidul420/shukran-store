@@ -7,7 +7,7 @@ import Products from '../products/Products'
 
 const Home = () => {
   return (
-    <div className=' scroll-smooth'>
+    <div className=' scroll-smooth relative'>
         <NavBar />
         <Banner />
         <Popular />

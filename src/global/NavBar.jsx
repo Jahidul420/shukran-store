@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import { BsHandbag, BsSuitHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import StoreContext from "../context/StoreContext";
+import Cart from "./Cart";
 function NavBar() {
-  const { cart, wish } = useContext(StoreContext);
+  const { cart, wish, handleShowCart } = useContext(StoreContext);
   return (
     <div className="sticky top-0 z-50 text-white">
-      <div className="flex justify-between items-end h-16 w-full font-oswald px-10 ">
+      <div className="flex justify-between items-end h-16 w-full font-oswald px-10 relative">
+      <Cart />
         <div className="flex items-center gap-5">
           <Link to="/">Home</Link>
           <Link to="/">Products</Link>
@@ -20,7 +22,7 @@ function NavBar() {
             <div
               className={` ${
                 wish.length > 0 ? "opacity-100" : "opacity-0"
-              } bg-white h-5 w-5 rounded-full absolute -top-2 -right-2 text-black flex justify-center items-center text-xs duration-700 transition-all`}
+              } bg-white h-5 w-5 rounded-full absolute -top-2 -right-2 text-black flex justify-center items-center text-xs duration-300 transition-all`}
             >
               <p>{wish.length}</p>
             </div>
@@ -30,8 +32,8 @@ function NavBar() {
           <Link to="/">Blog</Link>
           <Link to="/">About Us</Link>
           <Link to="/">Contact</Link>
-          <Link
-            to="/"
+          <button
+            onClick={handleShowCart}
             className="p-2  hover:bg-[#4a094a]  hover:text-white rounded-full duration-300 border border-white relative"
           >
             <BsHandbag />
@@ -39,7 +41,7 @@ function NavBar() {
             <div
               className={` ${
                 cart.length > 0 ? "opacity-100" : "opacity-0"
-              } bg-white h-5 w-5 rounded-full absolute -top-2 -right-2 text-black flex justify-center items-center text-xs duration-700 transition-all`}
+              } bg-white h-5 w-5 rounded-full absolute -top-2 -right-2 text-black flex justify-center items-center text-xs duration-300 transition-all`}
             >
               <p>
                 {cart.reduce(
@@ -48,7 +50,7 @@ function NavBar() {
                 )}
               </p>
             </div>
-          </Link>
+          </button>
         </div>
       </div>
     </div>

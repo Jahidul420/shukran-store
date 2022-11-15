@@ -6,11 +6,7 @@ import { Link } from "react-router-dom";
 import StoreContext from "../../context/StoreContext";
 const Products = () => {
   const { products, addToCart, handleWishList, handleKgAndPrice } = useContext(StoreContext);
-  // const [newProduct, setNewProduct] = useState({image: "", name: "", tagLine: "", });
-  // const {}
-  // const xyz = (product)=>{
-    
-  // }
+
   return (
     <div className="  text-white px-10 py-20 bg-[#570A57]">
       <div className="w-[60%] m-auto text-center text-5xl font-zen space-y-8 mb-20">

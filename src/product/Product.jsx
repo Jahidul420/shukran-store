@@ -2,21 +2,16 @@ import React from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-
-=======
 import rice1 from "../assets/rice1-min.jpg";
 import rice2 from "../assets/rice2-min.jpg";
 import rice3 from "../assets/rice3-min.jpg";
 import rice4 from "../assets/rice4-min.jpg";
->>>>>>> a801b67e111655b3002fca94b4c960e09151b741
 import KgButton from "../component/KgButton";
 import NavBar from "../global/NavBar";
 const Product = () => {
   return (
     <div>
       <NavBar />
-<<<<<<< HEAD
       <div className="flex justify-between h-[100vh] w-full bg-purple-900 -mt-16">
         <div className=" w-[60%] bg-green-500">
           <div className="h-[100vh] w-full">
@@ -72,7 +67,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-=======
+
       <div className="flex justify-between w-screen -mt-16 sticky scroll-smooth">
         <div className=" w-[60%] h-auto">
           <BgImage img={rice1} />
@@ -139,7 +134,6 @@ const Product = () => {
       <div className="h-screen w-full sticky bg-[#5f0b5f] border-t">
         <h2>Hello world i amd from another worl</h2>
       </div>
->>>>>>> a801b67e111655b3002fca94b4c960e09151b741
     </div>
   );
 };
@@ -148,13 +142,8 @@ export default Product;
 
 const BgImage = ({ img }) => {
   return (
-<<<<<<< HEAD
     <div className="h-[100vh] w-full">
       <img src={img} alt="" className=" h-full w-full object-cover" />
-=======
-    <div className="h-screen w-full ">
-      <img src={img} alt="" className="h-full w-full object-cover" />
->>>>>>> a801b67e111655b3002fca94b4c960e09151b741
     </div>
   );
 };
