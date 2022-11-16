@@ -7,7 +7,7 @@ function NavBar() {
   const { cart, wish, handleShowCart } = useContext(StoreContext);
   return (
     <div className="sticky top-0 z-50 text-white">
-      <div className="flex justify-between items-end h-16 w-full font-oswald px-10 relative">
+      <div className="flex justify-between items-end h-16 w-full font-oswald px-10 ">
       <Cart />
         <div className="flex items-center gap-5">
           <Link to="/">Home</Link>

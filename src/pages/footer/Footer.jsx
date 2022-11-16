@@ -12,12 +12,13 @@ import { Link } from "react-router-dom";
 import pattern from "../../assets/pattern.png";
 import Logo from "../../assets/shukranLogo.png";
 const Footer = () => {
+  // [#4a094a]
   return (
-    <div className="bg-[#4a094a] relative">
+    <div className="bg-black relative">
       <img
         src={pattern}
         alt=""
-        className=" absolute top-0 left-0 object-cover h-full w-full opacity-5"
+        className=" absolute top-0 left-0 object-cover h-full w-full opacity-10"
       />
       <div className="h-[80vh] w-full flex justify-between items-end gap-5 px-10 relative">
         <FirstDiv />
@@ -44,7 +45,7 @@ const FirstDiv = () => {
   return (
     <div className="w-[30%]">
       <h2 className="text-4xl text-white font-zen mb-8">FOLLOW US</h2>
-      <div className="flex justify-between ie text-white text-5xl items-center group">
+      <div className="flex justify-between ie text-white text-4xl items-center group pr-3">
         {IconArr.map((item, index) => (
           <Link
             to={item.to}
@@ -98,13 +99,13 @@ const LastDiv = () => {
           />
         </div>
 
-        <div className="w-full flex items-center">
+        <div className="w-full flex items-center border rounded-md">
           <input
             type="email"
-            className="outline-none border-none h-12 text-black px-2 w-[70%] rounded-l-md"
+            className="outline-none border-none h-12 text-white px-2 w-[70%] rounded-l-md bg-white/10 backdrop-blur-xs"
             placeholder="Enter your Email..."
           />
-          <button className="h-12 bg-purple-600 w-[30%] rounded-r-md">
+          <button className="h-12 bg-white font-semibold text-lg text-black/80 w-[30%] rounded-r-md">
             Subscribe
           </button>
         </div>
@@ -120,7 +121,7 @@ const LastDiv = () => {
 
 const AppStore = ({ icon, storeName }) => {
   return (
-    <div className="py-3 px-2 rounded-lg border-2 border-white ">
+    <div className="py-3 px-2 rounded-lg border-2 border-white">
       <button className="flex items-center text-xl font-semibold justify-between w-full">
         {icon}
         {storeName}
