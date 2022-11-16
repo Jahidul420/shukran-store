@@ -10,7 +10,7 @@ export function StoreContextProvider({ children }) {
   const productsArr = [
     {
       id: 100,
-      name: "Dinajpuri Classic Nahirshil",
+      name: "Dinajpuri Classic Nahirshil Nahirshil",
       tagLing: "DINAJPUR PLUM POWDER",
       quantity: 1,
       image: njh,
@@ -121,7 +121,7 @@ export function StoreContextProvider({ children }) {
   // THIS FUNCTION HANDLING CART PRODUCTS QUANTITY INCREMENT AND DECREMENT
   const handleQuantity = (product, action) => {
     for (let i = 0; i < cart.length; i++) {
-      if (cart[i].id === product.id) {
+      if (cart[i].id === product.id && cart[i].kg === product.kg) {
         cart[i].quantity += action;
         return setproducts((prevState) => [...prevState]);
       }
@@ -145,16 +145,20 @@ export function StoreContextProvider({ children }) {
   };
 
   // THIS FUNCTION REMOvE A PRODUCT TO THE CART
-  const removeToCart = (id) => {
-    const filterProduct = cart.filter((product) => product.id !== id);
-    return setCart([...filterProduct]);
+  const removeToCart = (product) => {
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id === product.id && cart[i].kg === product.kg) {
+        cart.splice(i, 1);
+        return setCart((prevState) => [...prevState]);
+      }
+    }
   };
 
-
+  // THIS FUNCTION TOGGLE CART
   const [showCart, setShowCart] = useState();
-  const handleShowCart = ()=>{
-    return setShowCart(!showCart)
-  } 
+  const handleShowCart = () => {
+    return setShowCart(!showCart);
+  };
   return (
     <StoreContext.Provider
       value={{
@@ -167,7 +171,7 @@ export function StoreContextProvider({ children }) {
         handleWishList,
         handleQuantity,
         handleKgAndPrice,
-        handleShowCart
+        handleShowCart,
       }}
     >
       {children}

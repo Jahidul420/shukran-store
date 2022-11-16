@@ -1,27 +1,19 @@
 import React, { useContext } from "react";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { BsHandbag } from "react-icons/bs";
 import { HiXMark } from "react-icons/hi2";
-import { TbCurrencyTaka } from "react-icons/tb";
 import StoreContext from "../context/StoreContext";
+import CartProduct2 from "./CartProduct2";
 const Cart = () => {
-  const { cart, showCart, handleShowCart, handleQuantity } =
-    useContext(StoreContext);
+  const { cart, showCart, handleShowCart } = useContext(StoreContext);
 
   return (
     <div
       className={`h-screen ${
         showCart ? "w-[420px] border-l" : " w-0"
-      } bg-white/30 backdrop-blur-xl absolute top-0 right-0 z-50 duration-500 transition-all`}
+      } bg-white/30 backdrop-blur-xl absolute top-0 right-0 z-50 duration-500 transition-all overflow-y-scroll`}
     >
-      <div
-        className={`${
-          showCart
-            ? " opacity-100 ease-in-out transition-all duration-1000"
-            : "opacity-0"
-        } px-4 font-openSans `}
-      >
-        <div className=" h-20 w-full flex justify-between items-center text-2xl text-white mb-5">
+      <div className={`${showCart ? "block" : "hidden"} px-4 font-openSans`}>
+        <div className=" h-20 w-full flex justify-between items-center text-2xl text-white mb-5 sticky top-0">
           <button onClick={handleShowCart} className="pr-2 py-2 text-4xl">
             <HiXMark />
           </button>
@@ -41,48 +33,18 @@ const Cart = () => {
             </div>
           </button>
         </div>
-        {cart.map((product, index) => (
-          <div
-            className="h-28 mb-8 w-full flex overflow-hidden rounded-md text-black border bg-white drop-shadow-md"
-            key={index}
-          >
-            <div className="h-full w-38">
-              <img
-                src={product.image}
-                alt=""
-                className=" object-cover h-full w-full"
-              />
+        {cart.length > 0 ? (
+          cart.map((product, index) => (
+            <div key={index}>
+              {/* <CartProduct product={product} /> */}
+              <CartProduct2 product={product} />
             </div>
-
-            <div className="flex flex-col justify-between px-3 py-2 items-start w-full">
-              <p className=" text-base font-semibold">
-                {product.name} - {product.kg}kg
-              </p>
-
-              <div className="flex items-center w-full text-sm font-semibold text-gray-800">
-                <p>Unite Price - </p>
-                <TbCurrencyTaka />
-                <p>{product.price}</p>
-              </div>
-
-              <div className="flex justify-between items-center w-full">
-                <div className="flex gap-4 items-center font-zen w-20 text-sm">
-                  <button onClick={() => handleQuantity(product)}>
-                    {product.quantity < 2 ? <HiXMark /> : <AiOutlineMinus />}
-                  </button>
-                  <p className="text-xl">1</p>
-                  <button onClick={() => handleQuantity(product)}>
-                    <AiOutlinePlus />
-                  </button>
-                </div>
-                <div className="flex items-center text-xl font-medium font-oswald">
-                  <TbCurrencyTaka />
-                  <p>{product.price * product.quantity}</p>
-                </div>
-              </div>
-            </div>
+          ))
+        ) : (
+          <div className="h-screen w-full flex justify-center items-center">
+            <p className="mb-32">You don't add any product in cart</p>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
