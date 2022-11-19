@@ -12,7 +12,7 @@ const Cart = () => {
         showCart ? "w-[420px] border-l" : " w-0"
       } bg-white/30 backdrop-blur-xl absolute top-0 right-0 z-50 duration-500 transition-all overflow-y-scroll`}
     >
-      <div className={`${showCart ? "block" : "hidden"} px-4 font-openSans`}>
+      <div className={`${showCart ? "block" : "hidden"} px-4 font-roboto`}>
         <div className=" h-20 w-full flex justify-between items-center text-2xl text-white mb-5 sticky top-0">
           <button onClick={handleShowCart} className="pr-2 py-2 text-4xl">
             <HiXMark />

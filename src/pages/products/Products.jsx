@@ -8,10 +8,10 @@ const Products = () => {
   const { products, addToCart, handleWishList, handleKgAndPrice } = useContext(StoreContext);
 
   return (
-    <div className="  text-white px-10 py-20 bg-[#570A57]">
-      <div className="w-[60%] m-auto text-center text-5xl font-zen space-y-8 mb-20">
+    <div className="  text-black px-10 py-20 bg-white">
+      <div className="w-[50%] m-auto text-center text-5xl font-austin space-y-8 mb-20">
         <h2>MEET THE QUEEN OF ANTIOXIDANTS.</h2>
-        <p className=" text-xl font-openSans">
+        <p className="font-roboto text-sm">
           100% Australian. 100% natural. The Queen Garnet plum has been lovingly
           cultivated to be ‘the queen of antioxidants’. The perfect sweet union
           of taste and wellbeing, it’s cherished by nutritionists and worshipped
@@ -27,8 +27,8 @@ const Products = () => {
             key={product.id}
           >
             <div className=" w-[50%]">
-              <div className=" p-10 h-[610px] w-[600px] bg-[#4a094a] rounded-full  relative group">
-                <div className="duration-300 group-hover:scale-105 h-full w-full  rounded-full bg-[#4a094a] absolute top-0 left-0 transition-all"></div>
+              <div className=" p-10 h-[610px] w-[600px] bg-black rounded-full  relative group">
+                <div className="duration-300 group-hover:scale-105 h-full w-full  rounded-full bg-black absolute top-0 left-0 transition-all"></div>
                 <img
                   src={product.image}
                   alt=""
@@ -40,24 +40,24 @@ const Products = () => {
             <div className="w-[50%] ml-20">
               <div className="space-y-7">
                 <div className="w-[70%]">
-                  <Link to="/product" className="text-4xl font-medium font-zen">
+                  <Link to="/product" className="text-4xl font-medium font-lora">
                     {product.name}
                     <p className="text-lg mt-2">{product.tagLine}</p>
                   </Link>
                 </div>
 
-                <div className="flex items-center text-2xl font-zen">
+                <div className="flex items-center text-2xl font-oswald">
                   <TbCurrencyTaka />
                   <p className="w-20">
                     {product.priceAndKgs.map((item) =>
                       item.active ? item.price : null
                     )}
                   </p>
-                  <div className="text-sm space-x-5 ml-5 font-normal font-openSans">
+                  <div className="text-sm space-x-5 ml-5 font-normal font-roboto">
                     {product.priceAndKgs.map((item, index) => (
                       <button
                         className={`py-[2px] px-2 border rounded-full ${
-                          item.active ? "bg-white text-purple-500 " : ""
+                          item.active ? "bg-black text-white" : ""
                         } duration-500`}
                         key={index}
                         onClick={()=>handleKgAndPrice(product, item)}
@@ -68,11 +68,11 @@ const Products = () => {
                   </div>
                 </div>
 
-                <h2 className="text-xl w-[70%] text-left pb-2 font-zen">
+                <h2 className="text-md w-[70%] text-left pb-2 font-roboto">
                   {product.discription}
                 </h2>
                 <div className="flex items-center gap-5 text-xl">
-                  <Link to="/product" className="text-xs border-b-2 ">
+                  <Link to="/product" className="text-xs underline">
                     LEARN MORE
                   </Link>
                   <button>
@@ -93,11 +93,11 @@ const Products = () => {
                 </div>
 
                 <div className="flex items-center gap-5 font-oswald text-sm">
-                  <button className=" border-2 border-white bg-white rounded-full px-8 py-[10px] text-purple-500 hover:scale-110 duration-300">
+                  <button className=" border-2 border-white bg-black rounded-full px-8 py-[10px] text-white hover:scale-110 duration-300">
                     BUY NOW
                   </button>
                   <button
-                    className=" border-2 border-white text-white rounded-full px-8 py-[10px] hover:scale-110 duration-300"
+                    className=" border-2 border-black text-black rounded-full px-8 py-[10px] hover:scale-110 duration-300"
                     onClick={() => addToCart(product)}
                   >
                     ADD TO CART
@@ -113,3 +113,5 @@ const Products = () => {
 };
 
 export default Products;
+
+

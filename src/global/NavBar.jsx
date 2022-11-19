@@ -15,7 +15,7 @@ function NavBar() {
           <Link to="/">Find Store</Link>
           <Link
             to="/"
-            className="p-2  hover:bg-[#4a094a] duration-300  hover:text-white rounded-full border border-white relative"
+            className="p-2  hover:bg-black duration-300  hover:text-white rounded-full border border-white relative"
           >
             <BsSuitHeart />
 
@@ -34,7 +34,7 @@ function NavBar() {
           <Link to="/">Contact</Link>
           <button
             onClick={handleShowCart}
-            className="p-2  hover:bg-[#4a094a]  hover:text-white rounded-full duration-300 border border-white relative"
+            className="p-2  hover:bg-black  hover:text-white rounded-full duration-300 border border-white relative"
           >
             <BsHandbag />
 

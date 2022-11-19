@@ -20,7 +20,7 @@ const Banner = () => {
         </div>
         <div className="text-center w-[85%] m-auto">
           <div>
-            <h2 className="text-[80px] text-white font-zen tracking-tighter">
+            <h2 className="text-[80px] text-white font-austin font-medium tracking-tighter">
               WHAT ARE YOU GREATEFUL FOR TODAY?
             </h2>
             <button className="px-10 py-4 mt-20 bg-white  text-black rounded-full hover:scale-110 duration-500">

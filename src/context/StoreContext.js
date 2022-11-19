@@ -3,6 +3,12 @@ import chg from "../assets/png/dChinigura.png";
 import ktr from "../assets/png/katari.png";
 import min from "../assets/png/miniket.png";
 import njh from "../assets/png/najirshail.png";
+import recepi1 from "../assets/recipe/recipy (1).jfif";
+import recepi2 from "../assets/recipe/recipy (1).png";
+import recepi3 from "../assets/recipe/recipy (2).jfif";
+import recepi4 from "../assets/recipe/recipy (3).jfif";
+import recepi5 from "../assets/recipe/recipy (4).jfif";
+import recepi6 from "../assets/recipe/recipy (5).jfif";
 const StoreContext = createContext();
 // const p = JSON.stringify(newProduct);
 // return setCart((prevState) => [JSON.parse(p), ...prevState]);
@@ -10,7 +16,7 @@ export function StoreContextProvider({ children }) {
   const productsArr = [
     {
       id: 100,
-      name: "Dinajpuri Classic Nahirshil Nahirshil",
+      name: "Dinajpuri Classic Nahirshil Rice",
       tagLing: "DINAJPUR PLUM POWDER",
       quantity: 1,
       image: njh,
@@ -26,7 +32,7 @@ export function StoreContextProvider({ children }) {
     },
     {
       id: 101,
-      name: "Dinajpuri Classic Chinigura",
+      name: "Dinajpuri Classic Chinigura Rice",
       tagLing: "DINAJPUR PLUM POWDER",
       quantity: 1,
       image: chg,
@@ -42,7 +48,7 @@ export function StoreContextProvider({ children }) {
     },
     {
       id: 102,
-      name: "Dinajpuri Classic katari",
+      name: "Dinajpuri Classic katari Rice",
       tagLing: "DINAJPUR PLUM POWDER",
       quantity: 1,
       image: ktr,
@@ -58,7 +64,7 @@ export function StoreContextProvider({ children }) {
     },
     {
       id: 103,
-      name: "Dinajpuri Classic Miniket",
+      name: "Dinajpuri Classic Miniket Rice",
       tagLing: "DINAJPUR PLUM POWDER",
       quantity: 1,
       image: min,
@@ -71,6 +77,45 @@ export function StoreContextProvider({ children }) {
       wish: false,
       discription:
         "Add a touch of royalty to any dish, with this versatile powder, made from nothing but freeze dried Queen Garnet plums.eeze dried Queen Garnet end.",
+    },
+  ];
+
+  const recipeArr = [
+    {
+      image: recepi1,
+      name: "Kacchi Breyany",
+      discription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy",
+    },
+    {
+      image: recepi2,
+      name: "Kacchi Breyany",
+      discription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy",
+    },
+    {
+      image: recepi3,
+      name: "Kacchi Breyany",
+      discription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy",
+    },
+    {
+      image: recepi4,
+      name: "Kacchi Breyany",
+      discription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy",
+    },
+    {
+      image: recepi5,
+      name: "Kacchi Breyany",
+      discription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy",
+    },
+    {
+      image: recepi6,
+      name: "Kacchi Breyany",
+      discription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy",
     },
   ];
   const [products, setproducts] = useState(productsArr);
@@ -128,7 +173,7 @@ export function StoreContextProvider({ children }) {
     }
   };
 
-  // THIS FUNCTION HANDLE PRODUCT KG AND PRICE
+  // THIS FUNCTION HANDLE PRODUCT KG AND PRice
   const handleKgAndPrice = (product, kg) => {
     for (let i = 0; i < products.length; i++) {
       if (products[i].id === product.id) {
@@ -166,6 +211,7 @@ export function StoreContextProvider({ children }) {
         products,
         wish,
         cart,
+        recipeArr,
         addToCart,
         removeToCart,
         handleWishList,
