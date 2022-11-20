@@ -28,7 +28,7 @@ export function StoreContextProvider({ children }) {
       ],
       wish: false,
       discription:
-        "Add a touch of royalty to any dish, with this versatile powder, made from nothing but freeze dried Queen Garnet plums.eeze dried Queen Garnet end.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.",
     },
     {
       id: 101,
@@ -44,7 +44,7 @@ export function StoreContextProvider({ children }) {
       ],
       wish: false,
       discription:
-        "Add a touch of royalty to any dish, with this versatile powder, made from nothing but freeze dried Queen Garnet plums.eeze dried Queen Garnet end.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.",
     },
     {
       id: 102,
@@ -60,7 +60,7 @@ export function StoreContextProvider({ children }) {
       ],
       wish: false,
       discription:
-        "Add a touch of royalty to any dish, with this versatile powder, made from nothing but freeze dried Queen Garnet plums.eeze dried Queen Garnet end.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.",
     },
     {
       id: 103,
@@ -76,7 +76,7 @@ export function StoreContextProvider({ children }) {
       ],
       wish: false,
       discription:
-        "Add a touch of royalty to any dish, with this versatile powder, made from nothing but freeze dried Queen Garnet plums.eeze dried Queen Garnet end.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.",
     },
   ];
 
@@ -189,9 +189,9 @@ export function StoreContextProvider({ children }) {
     return setproducts((prevState) => [...prevState]);
   };
   const [product, setproduct] = useState();
-  const viewProduct =(product)=>{
-      setproduct(product)
-  }
+  const viewProduct = (product) => {
+    setproduct(product);
+  };
   // THIS FUNCTION REMOvE A PRODUCT TO THE CART
   const removeToCart = (product) => {
     for (let i = 0; i < cart.length; i++) {

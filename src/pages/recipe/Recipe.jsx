@@ -6,7 +6,7 @@ import StoreContext from "../../context/StoreContext";
 const Recipe = () => {
   const { recipeArr } = useContext(StoreContext);
   return (
-    <div className="h-auto w-screen py-32 text-center">
+    <div className="h-auto w-screen py-32 text-center" >
       <h2 className=" text-5xl w-4/6 font-austin mx-auto leading-none mb-20">SHUKRAN ROYAL RECIPES</h2>
       <Splide
         options={{

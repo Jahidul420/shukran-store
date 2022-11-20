@@ -22,6 +22,7 @@ function NavBar() {
       >
         <Cart />
         <div className="flex items-center gap-5">
+          <a href="#hello">hello</a>
           <Link to="/">Home</Link>
           <Link to="/">Products</Link>
           <Link to="/">Find Store</Link>

@@ -27,7 +27,7 @@ const Products = () => {
             key={product.id}
           >
             <div className=" w-[50%]">
-              <div className=" p-10 h-[610px] w-[600px] bg-black rounded-full  relative group">
+              <div className=" p-5 h-[630px] w-[620px] bg-black rounded-full  relative group">
                 <div className="duration-300 group-hover:scale-105 h-full w-full  rounded-full bg-black absolute top-0 left-0 transition-all"></div>
                 <img
                   src={product.image}
