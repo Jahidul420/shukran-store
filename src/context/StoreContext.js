@@ -188,7 +188,10 @@ export function StoreContextProvider({ children }) {
     }
     return setproducts((prevState) => [...prevState]);
   };
-
+  const [product, setproduct] = useState();
+  const viewProduct =(product)=>{
+      setproduct(product)
+  }
   // THIS FUNCTION REMOvE A PRODUCT TO THE CART
   const removeToCart = (product) => {
     for (let i = 0; i < cart.length; i++) {
@@ -212,6 +215,8 @@ export function StoreContextProvider({ children }) {
         wish,
         cart,
         recipeArr,
+        product,
+        viewProduct,
         addToCart,
         removeToCart,
         handleWishList,

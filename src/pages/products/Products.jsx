@@ -5,8 +5,8 @@ import { TbCurrencyTaka } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import StoreContext from "../../context/StoreContext";
 const Products = () => {
-  const { products, addToCart, handleWishList, handleKgAndPrice } = useContext(StoreContext);
-
+  const { products, addToCart, handleWishList, handleKgAndPrice, viewProduct } =
+    useContext(StoreContext);
   return (
     <div className="  text-black px-10 py-20 bg-white">
       <div className="w-[50%] m-auto text-center text-5xl font-austin space-y-8 mb-20">
@@ -40,7 +40,11 @@ const Products = () => {
             <div className="w-[50%] ml-20">
               <div className="space-y-7">
                 <div className="w-[70%]">
-                  <Link to="/product" className="text-4xl font-medium font-lora">
+                  <Link
+                    to="/product"
+                    onClick={() => viewProduct(product)}
+                    className="text-4xl font-medium font-lora"
+                  >
                     {product.name}
                     <p className="text-lg mt-2">{product.tagLine}</p>
                   </Link>
@@ -60,7 +64,7 @@ const Products = () => {
                           item.active ? "bg-black text-white" : ""
                         } duration-500`}
                         key={index}
-                        onClick={()=>handleKgAndPrice(product, item)}
+                        onClick={() => handleKgAndPrice(product, item)}
                       >
                         {item.kg} kg
                       </button>

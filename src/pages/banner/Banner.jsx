@@ -1,7 +1,7 @@
+import { motion } from "framer-motion";
 import React from "react";
 import rice from "../../assets/rice.mp4";
 import logo from "../../assets/shukranLogo.png";
-
 const Banner = () => {
   return (
     <div className=" -mt-16 relative h-[100vh] w-full">
@@ -19,14 +19,18 @@ const Banner = () => {
           <img src={logo} alt="" className="h-full m-auto object-cover" />
         </div>
         <div className="text-center w-[85%] m-auto">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-[80px] text-white font-austin font-medium tracking-tighter">
               WHAT ARE YOU GREATEFUL FOR TODAY?
             </h2>
             <button className="px-10 py-4 mt-20 bg-white  text-black rounded-full hover:scale-110 duration-500">
               FIND MORE ABOUT US
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
