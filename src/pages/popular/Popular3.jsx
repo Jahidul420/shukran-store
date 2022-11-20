@@ -4,19 +4,20 @@ import { FaStar } from "react-icons/fa";
 
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { TbCurrencyTaka } from "react-icons/tb";
+import Title from "../../component/Title";
 import StoreContext from "../../context/StoreContext";
 const Popular3 = () => {
   const { products } = useContext(StoreContext);
 
   // bg-[#570A57]
   return (
-    <div className=" px-40 py-20 bg-gray-50 ">
-      <div className=" text-center text-black font-austin text-5xl my-20">
-        <h2 className="w-[60%] m-auto">OUR POPULARS PRODUCTS</h2>
-        <p className="text-lg mt-5">
-          100% Recomended and plepoles love it somuch
-        </p>
-        <div className="flex items-center justify-center gap-x-2 py-2 text-xl">
+    <div className=" px-40 py-32 bg-gray-50 ">
+      <div className=" text-center text-black font-austin text-5xl">
+        <Title
+          title="OUR POPULARS POPULAR PRODUCTS"
+          subTitle="100% Recomended and plepoles love it somuch"
+        />
+        <div className="flex items-center justify-center gap-x-2 py-2 text-lg">
           <FaStar />
           <FaStar />
           <FaStar />
@@ -24,7 +25,7 @@ const Popular3 = () => {
           <FaStar />
         </div>
       </div>
-      <div className="flex items-center justify-between relative">
+      <div className="flex items-center justify-between relative mt-20">
         <PopularCart product={products[0]} />
         <PopularCart product={products[1]} />
         <PopularCart product={products[2]} />
@@ -39,7 +40,7 @@ const PopularCart = ({ product }) => {
   const { addToCart } = useContext(StoreContext);
   return (
     <div className=" w-full rounded-xl  bg-transparent relative group">
-      <div className="bg-gray-700 h-[460px] w-[450px] absolute -top-8 -left-6 rounded-full opacity-0 group-hover:opacity-100 duration-200 group-hover:scale-110"></div>
+      <div className="bg-black/60 backdrop-blur-lg h-[460px] w-[450px] absolute -top-8 -left-6 rounded-full opacity-0 group-hover:opacity-100 duration-200 group-hover:scale-110"></div>
       <div className="relative">
         <div className="w-full h-[400px]">
           <img
@@ -50,9 +51,9 @@ const PopularCart = ({ product }) => {
         </div>
 
         <div className="text-center px-2 text-black w-full space-y-2">
-          <h2 className="text-2xl font-austin font-medium ">{product.name}</h2>
+          <h2 className="text-2xl font-austin ">{product.name}</h2>
           <ProductPrice product={product} />
-          <p className="text-just w-[80%] m-auto text-sm font-medium text-gray-600">
+          <p className="text-just w-[80%] m-auto text-sm font-roboto">
             Add a touch of royalty to any dish, with this versatile powder, made
             from nothing but
           </p>
@@ -75,7 +76,7 @@ const ProductPrice = ({ product }) => {
   const { handleWishList } = useContext(StoreContext);
   return (
     <div className="flex items-center justify-center font-roboto">
-      <p className="flex justify-center items-center text-2xl font-oswald">
+      <p className="flex justify-center items-center text-xl font-oswald">
         <TbCurrencyTaka />
         {product.priceAndKgs.map((item) => (item.active ? item.price : null))}
       </p>
