@@ -134,9 +134,6 @@ export function StoreContextProvider({ children }) {
 
   // THIS FUNCTION ADD A PRODUCT TO CART
   const addToCart = (product) => {
-    const index = indexFinder(cart, product);
-
-    // CREATE A NEW PRODUCT OBJECT AND SET IN CART
     let productPrice = 0;
     let productKg = 0;
     product.priceAndKgs.map((item) =>
@@ -153,10 +150,11 @@ export function StoreContextProvider({ children }) {
       kg: productKg,
       discription: product.discription,
     };
-
-    if (index >= 0 && cart[index].kg === newProduct.kg) {
-      cart[index].quantity += 1;
-      return setCart((prevState) => [...prevState]);
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id === newProduct.id && cart[i].kg === newProduct.kg) {
+        cart[i].quantity += 1;
+        return setCart((prevState) => [...prevState]);
+      }
     }
     return setCart((prevState) => [newProduct, ...prevState]);
   };
