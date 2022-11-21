@@ -10,7 +10,7 @@ const Recipe = () => {
     <div className="h-auto w-screen py-32 text-center">
       <Title
         title="THE ROYAL RECIPYS"
-        subTitle="Ther are many recipys and items that you can enjoy with SHUKRAN Rice"
+        subTitle="There are many recipys and items that you can enjoy with SHUKRAN Rice"
       />
       <div className="mt-20">
         <Splide

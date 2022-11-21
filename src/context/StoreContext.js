@@ -124,14 +124,24 @@ export function StoreContextProvider({ children }) {
     products.filter((product) => product.wish === true)
   );
 
+  const indexFinder = (mainArr, product) => {
+    for (let i = 0; i < mainArr.length; i++) {
+      if (mainArr[i].id === product.id) {
+        return i;
+      }
+    }
+  };
+
   // THIS FUNCTION ADD A PRODUCT TO CART
   const addToCart = (product) => {
+    const index = indexFinder(cart, product);
+
+    // CREATE A NEW PRODUCT OBJECT AND SET IN CART
     let productPrice = 0;
     let productKg = 0;
     product.priceAndKgs.map((item) =>
       item.active ? ((productPrice = item.price), (productKg = item.kg)) : null
     );
-    // CREATE A NEW PRODUCT OBJECT AND SET IN CART
     const newProduct = {
       id: product.id,
       name: product.name,
@@ -143,23 +153,21 @@ export function StoreContextProvider({ children }) {
       kg: productKg,
       discription: product.discription,
     };
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i].id === newProduct.id && cart[i].kg === newProduct.kg) {
-        cart[i].quantity += 1;
-        return setCart((prevState) => [...prevState]);
-      }
+
+    if (index >= 0 && cart[index].kg === newProduct.kg) {
+      cart[index].quantity += 1;
+      return setCart((prevState) => [...prevState]);
     }
     return setCart((prevState) => [newProduct, ...prevState]);
   };
   // THIS FUNCTION ADD A PRODUCT TO WISHLIST
   const handleWishList = (product, action) => {
-    for (let i = 0; i < products.length; i++) {
-      if (products[i].id === product.id) {
-        products[i].wish = action;
-        setproducts((prevState) => [...prevState]);
-        const trueWish = products.filter((product) => product.wish === true);
-        return setWish([...trueWish]);
-      }
+    const index = indexFinder(products, product);
+    if (index >= 0 && products[index].id === product.id) {
+      products[index].wish = action;
+      setproducts((prevState) => [...prevState]);
+      const trueWish = products.filter((product) => product.wish === true);
+      return setWish([...trueWish]);
     }
   };
 
@@ -175,23 +183,19 @@ export function StoreContextProvider({ children }) {
 
   // THIS FUNCTION HANDLE PRODUCT KG AND PRice
   const handleKgAndPrice = (product, kg) => {
-    for (let i = 0; i < products.length; i++) {
-      if (products[i].id === product.id) {
-        for (let x = 0; x < products[i].priceAndKgs.length; x++) {
-          if (products[i].priceAndKgs[x].kg === kg.kg) {
-            products[i].priceAndKgs[x].active = true;
-          } else {
-            products[i].priceAndKgs[x].active = false;
-          }
+    const index = indexFinder(products, product);
+    if (index >= 0 && products[index].id === product.id) {
+      for (let x = 0; x < products[index].priceAndKgs.length; x++) {
+        if (products[index].priceAndKgs[x].kg === kg.kg) {
+          products[index].priceAndKgs[x].active = true;
+        } else {
+          products[index].priceAndKgs[x].active = false;
         }
       }
     }
     return setproducts((prevState) => [...prevState]);
   };
-  const [product, setproduct] = useState();
-  const viewProduct = (product) => {
-    setproduct(product);
-  };
+
   // THIS FUNCTION REMOvE A PRODUCT TO THE CART
   const removeToCart = (product) => {
     for (let i = 0; i < cart.length; i++) {
@@ -202,6 +206,10 @@ export function StoreContextProvider({ children }) {
     }
   };
 
+  const [product, setproduct] = useState();
+  const viewProduct = (product) => {
+    setproduct(product);
+  };
   // THIS FUNCTION TOGGLE CART
   const [showCart, setShowCart] = useState();
   const handleShowCart = () => {
