@@ -4,7 +4,7 @@ import rice from "../../assets/rice.mp4";
 import logo from "../../assets/shukranLogo.png";
 const Banner = () => {
   return (
-    <div className=" -mt-16 relative h-[100vh] w-full">
+    <div className=" -mt-16 relative h-[100vh] w-full mix-blend-difference">
       <video
         src={rice}
         autoPlay

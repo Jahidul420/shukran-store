@@ -11,7 +11,7 @@ const Popular3 = () => {
 
   // bg-[#570A57]
   return (
-    <div className={` px-40 py-32 ${theme.background} `}>
+    <div className={` px-40 py-32 ${theme.background} mix-blend-difference `}>
       <div className={` text-center ${theme.text} font-austin text-5xl`}>
         <Title
           title="OUR POPULARS POPULAR PRODUCTS"
