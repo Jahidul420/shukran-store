@@ -1,28 +1,28 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BsHandbag, BsSuitHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import StoreContext from "../context/StoreContext";
 import Cart from "./Cart";
 function NavBar() {
-  const { cart, wish, handleShowCart } = useContext(StoreContext);
+ 
+  const { cart, wish, handleShowCart, handleMode, } =
+    useContext(StoreContext);
   const [wscroll, setScroll] = useState(window.scrollY);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     return setScroll(window.scrollY);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  // }, [wscroll]);
+  useEffect(() => {
+    const handleScroll = () => {
+      return setScroll(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+  }, [wscroll]);
   return (
     <div className={`sticky top-0 z-50 duration-300`}>
       <div
-        className={`flex justify-between items-end h-16 w-full font-oswald px-10
-          text-white
-        } duration-300`}
+        className={`flex justify-between items-end h-16 w-full font-oswald px-10 mix-blend-difference duration-300 `}
       >
         <Cart />
         <div className="flex items-center gap-5">
-          <a href="#hello">hello</a>
+          <button onClick={handleMode}>Mode</button>
+
           <Link to="/">Home</Link>
           <Link to="/">Products</Link>
           <Link to="/">Find Store</Link>

@@ -17,7 +17,6 @@ const Product = () => {
   return (
     <div>
       <NavBar />
-
       <div className="flex justify-between w-screen -mt-16 sticky scroll-smooth">
         <div className=" w-[60%] h-auto">
           <BgImage img={product.image} />

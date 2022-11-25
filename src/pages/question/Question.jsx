@@ -1,11 +1,14 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 // import "@splidejs/splide/dist/css/splide.min.css";
 import "@splidejs/react-splide/css";
+import React, { useContext } from "react";
+import StoreContext from "../../context/StoreContext";
 
-import React from "react";
 const Question = () => {
+
+const {theme} = useContext(StoreContext)
   return (
-    <div className="bg-gray-50 w-full h-auto py-40">
+    <div className={`${theme.background + " " + theme.text} w-full h-auto py-40`}>
       <div className=" w-[50%] mx-auto text-[100px] font-austin text-center">
         <h1 className=" leading-none">ALL YOU NEED TO KNOW</h1>
       </div>
@@ -23,7 +26,7 @@ const Question = () => {
           }}
         >
           <SplideSlide>
-            <div className="border h-auto w-[380px] p-14 text-center bg-white">
+            <div className="border h-auto w-[380px] p-14 text-center">
               <p className="text-sm font-semibold">QUESTION NO 01</p>
               <h2 className="text-2xl text-semibold font-austin py-2">
                 What is Chinigura Rice
@@ -36,7 +39,7 @@ const Question = () => {
             </div>
           </SplideSlide>
           <SplideSlide>
-            <div className="border h-auto w-[380px] p-14 text-center bg-white">
+            <div className="border h-auto w-[380px] p-14 text-center">
               <p className="text-sm font-semibold">QUESTION NO 01</p>
               <h2 className="text-2xl text-semibold font-austin py-2">
                 What is Chinigura Rice
@@ -49,7 +52,7 @@ const Question = () => {
             </div>
           </SplideSlide>
           <SplideSlide>
-            <div className="border h-auto w-[380px] p-14 text-center bg-white">
+            <div className="border h-auto w-[380px] p-14 text-center">
               <p className="text-sm font-semibold">QUESTION NO 01</p>
               <h2 className="text-2xl text-semibold font-austin py-2">
                 What is Chinigura Rice
@@ -62,7 +65,7 @@ const Question = () => {
             </div>
           </SplideSlide>
           <SplideSlide>
-            <div className="border h-auto w-[380px] p-14 text-center bg-white">
+            <div className="border h-auto w-[380px] p-14 text-center">
               <p className="text-sm font-semibold">QUESTION NO 01</p>
               <h2 className="text-2xl text-semibold font-austin py-2">
                 What is Chinigura Rice
@@ -75,7 +78,7 @@ const Question = () => {
             </div>
           </SplideSlide>
           <SplideSlide>
-            <div className="border h-auto w-[380px] p-14 text-center bg-white">
+            <div className="border h-auto w-[380px] p-14 text-center">
               <p className="text-sm font-semibold">QUESTION NO 01</p>
               <h2 className="text-2xl text-semibold font-austin py-2">
                 What is Chinigura Rice

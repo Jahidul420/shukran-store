@@ -6,9 +6,13 @@ import { Link } from "react-router-dom";
 import Title from "../../component/Title";
 import StoreContext from "../../context/StoreContext";
 const Products = () => {
-  const { products, addToCart, viewProduct } = useContext(StoreContext);
+  const { products, addToCart, viewProduct, theme } = useContext(StoreContext);
   return (
-    <div className="  text-black px-14 py-32 bg-white h-auto w-full">
+    <div
+      className={`${
+        theme.text + " " + theme.background
+      } px-14 py-32 h-auto w-full`}
+    >
       <Title
         title="MEET THE SHUKRAN GREAT PRODUCTS."
         subTitle="100% Australian. 100% natural. The Queen Garnet plum has been lovingly
@@ -46,11 +50,13 @@ const Products = () => {
                 </p>
                 <WishAndShare product={product} />
                 <div className="flex items-center gap-5 font-oswald text-sm">
-                  <button className=" border-2 border-white bg-black rounded-full px-8 py-[10px] text-white hover:scale-110 duration-300">
+                  <button
+                    className={`border-2 ${theme.button1} rounded-full px-8 py-[10px] hover:scale-110 duration-300`}
+                  >
                     BUY NOW
                   </button>
                   <button
-                    className=" border-2 border-black text-black rounded-full px-8 py-[10px] hover:scale-110 duration-300"
+                    className={` border-2 ${theme.button2} rounded-full px-8 py-[10px] hover:scale-110 duration-300 `}
                     onClick={() => addToCart(product)}
                   >
                     ADD TO CART
@@ -68,10 +74,15 @@ const Products = () => {
 export default Products;
 
 const ProductImage = ({ image }) => {
+  const { theme } = useContext(StoreContext);
   return (
     <div className=" w-[60%]">
-      <div className=" p-5 h-[630px] w-[620px] bg-black rounded-full  relative group mx-auto">
-        <div className="duration-300 group-hover:scale-105 h-full w-full  rounded-full bg-black absolute top-0 left-0 transition-all"></div>
+      <div
+        className={` p-5 h-[630px] w-[620px] ${theme.productBg} rounded-full  relative group mx-auto`}
+      >
+        <div
+          className={`duration-300 group-hover:scale-105 h-full w-full  rounded-full ${theme.productBg} absolute top-0 left-0 transition-all`}
+        ></div>
         <img
           src={image}
           alt=""
@@ -107,7 +118,7 @@ const WishAndShare = ({ product }) => {
 };
 
 const PriceAndKgsDiv = ({ product }) => {
-  const { handleKgAndPrice } = useContext(StoreContext);
+  const { handleKgAndPrice, theme } = useContext(StoreContext);
 
   return (
     <div className="flex items-center text-2xl font-oswald">
@@ -119,7 +130,7 @@ const PriceAndKgsDiv = ({ product }) => {
         {product.priceAndKgs.map((item, index) => (
           <button
             className={`py-[2px] px-2 border rounded-full ${
-              item.active ? "bg-black text-white" : ""
+              item.active ? theme.button1 : ""
             } duration-500`}
             key={index}
             onClick={() => handleKgAndPrice(product, item)}

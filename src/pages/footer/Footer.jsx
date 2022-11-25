@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   AiFillYoutube,
   AiOutlineInstagram,
@@ -13,8 +13,14 @@ import pattern from "../../assets/pattern.png";
 import Logo from "../../assets/shukranLogo.png";
 const Footer = () => {
   // [#4a094a]
+  const ref = useRef(null);
+  useEffect(()=>{
+    console.log(ref.current.style.top)
+  },[ref])
   return (
-    <div className="bg-black relative">
+    <div className="bg-black relative" ref={ref}>
+      
+
       <img
         src={pattern}
         alt=""

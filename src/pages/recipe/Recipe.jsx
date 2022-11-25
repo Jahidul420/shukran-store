@@ -4,7 +4,9 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Title from "../../component/Title";
 import StoreContext from "../../context/StoreContext";
+
 const Recipe = () => {
+
   const { recipeArr } = useContext(StoreContext);
   return (
     <div className="h-auto w-screen py-32 text-center">
@@ -18,9 +20,10 @@ const Recipe = () => {
             drag: "free",
             arrows: false,
             perPage: 4,
-            gap: "30rem",
             pagination: false,
-            padding: 50,
+            marginRight: 200,
+            type: "loop",
+            gap: "30rem",
           }}
         >
           {recipeArr.map((recipe, index) => (

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import chg from "../assets/png/dChinigura.png";
 import ktr from "../assets/png/katari.png";
 import min from "../assets/png/miniket.png";
@@ -10,6 +10,10 @@ import recepi4 from "../assets/recipe/recipy (3).jfif";
 import recepi5 from "../assets/recipe/recipy (4).jfif";
 import recepi6 from "../assets/recipe/recipy (5).jfif";
 const StoreContext = createContext();
+const ThemContext = createContext();
+export function useThem() {
+  return useContext(ThemContext);
+}
 // const p = JSON.stringify(newProduct);
 // return setCart((prevState) => [JSON.parse(p), ...prevState]);
 export function StoreContextProvider({ children }) {
@@ -213,9 +217,35 @@ export function StoreContextProvider({ children }) {
   const handleShowCart = () => {
     return setShowCart(!showCart);
   };
+
+  // SITE THEMING FUNCTIONILITY
+  const [mode, setMode] = useState(false);
+  const theme = mode
+    ? {
+        text: "text-white",
+        background: "bg-[#43283A]",
+        productBg: "bg-[#381F30]",
+        popularBg: "bg-[#381F30]",
+        button1: "bg-white text-black border-white",
+        button2: "bg-transprent text-white border-white",
+      }
+    : {
+        text: "text-black",
+        background: "bg-white",
+        productBg: "bg-black",
+        popularBg: "bg-black/50",
+        button1: "bg-black text-white border-black",
+        button2: "bg-transprent text-black border-black",
+      };
+
+  const handleMode = () => {
+    setMode((prevState) => !prevState);
+  };
+
   return (
     <StoreContext.Provider
       value={{
+        theme,
         showCart,
         products,
         wish,
@@ -229,9 +259,10 @@ export function StoreContextProvider({ children }) {
         handleQuantity,
         handleKgAndPrice,
         handleShowCart,
+        handleMode,
       }}
     >
-      {children}
+      <ThemContext.Provider value={{}}>{children}</ThemContext.Provider>
     </StoreContext.Provider>
   );
 }

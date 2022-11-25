@@ -10,6 +10,7 @@ import Question from '../question/Question'
 import Recipe from '../recipe/Recipe'
 
 const Home = () => {
+  
   return (
     <div className=' scroll-smooth'>
         <NavBar />

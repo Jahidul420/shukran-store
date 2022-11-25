@@ -7,12 +7,12 @@ import { TbCurrencyTaka } from "react-icons/tb";
 import Title from "../../component/Title";
 import StoreContext from "../../context/StoreContext";
 const Popular3 = () => {
-  const { products } = useContext(StoreContext);
+  const { products, theme } = useContext(StoreContext);
 
   // bg-[#570A57]
   return (
-    <div className=" px-40 py-32 bg-gray-50 ">
-      <div className=" text-center text-black font-austin text-5xl">
+    <div className={` px-40 py-32 ${theme.background} `}>
+      <div className={` text-center ${theme.text} font-austin text-5xl`}>
         <Title
           title="OUR POPULARS POPULAR PRODUCTS"
           subTitle="100% Recomended and plepoles love it somuch"
@@ -37,10 +37,12 @@ const Popular3 = () => {
 export default Popular3;
 
 const PopularCart = ({ product }) => {
-  const { addToCart } = useContext(StoreContext);
+  const { addToCart, theme } = useContext(StoreContext);
   return (
     <div className=" w-full rounded-xl  bg-transparent relative group">
-      <div className="bg-black/60 backdrop-blur-lg h-[460px] w-[450px] absolute -top-8 -left-6 rounded-full opacity-0 group-hover:opacity-100 duration-200 group-hover:scale-110"></div>
+      <div
+        className={`${theme.popularBg} backdrop-blur-lg h-[460px] w-[450px] absolute -top-8 -left-6 rounded-full opacity-0 group-hover:opacity-100 duration-200 group-hover:scale-110`}
+      ></div>
       <div className="relative">
         <div className="w-full h-[400px]">
           <img
@@ -50,16 +52,16 @@ const PopularCart = ({ product }) => {
           />
         </div>
 
-        <div className="text-center px-2 text-black w-full space-y-2">
+        <div className={`text-center px-2 ${theme.text} w-full space-y-4`}>
           <h2 className="text-2xl font-austin ">{product.name}</h2>
           <ProductPrice product={product} />
-          <p className="text-just w-[80%] m-auto text-sm font-roboto">
+          <p className="w-[80%] m-auto text-sm font-light">
             Add a touch of royalty to any dish, with this versatile powder, made
             from nothing but
           </p>
           <div className="flex justify-center items-center w-full px-4">
             <button
-              className="px-5 py-3 bg-black rounded-full border-2 text-white font-oswald hover:scale-105 duration-300 text-sm flex justify-center items-center gap-2"
+              className={`px-5 py-3 ${theme.button1} rounded-full border-2 font-oswald hover:scale-105 duration-300 text-sm flex justify-center items-center gap-2`}
               onClick={() => addToCart(product)}
             >
               <MdOutlineShoppingCart />
@@ -80,7 +82,7 @@ const ProductPrice = ({ product }) => {
         <TbCurrencyTaka />
         {product.priceAndKgs.map((item) => (item.active ? item.price : null))}
       </p>
-      <p className=" text-xs font-medium font-roboto mx-1">(Uinte Price) </p>
+      <p className=" text-xs font-roboto mx-1">(Uinte Price) </p>
       <button>
         {product.wish ? (
           <BsSuitHeartFill
