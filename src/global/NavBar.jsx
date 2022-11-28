@@ -4,25 +4,23 @@ import { Link } from "react-router-dom";
 import StoreContext from "../context/StoreContext";
 import Cart from "./Cart";
 function NavBar() {
- 
-  const { cart, wish, handleShowCart, handleMode, } =
-    useContext(StoreContext);
+  const { cart, wish, handleShowCart, handleMode } = useContext(StoreContext);
 
   return (
-    <div className={` bg-transparent sticky top-0 z-50 duration-300 mix-blend-difference `}>
+    <div className={` bg-transparent sticky top-0 z-50 duration-300`}>
       <div
-        className={`flex justify-between items-end h-16 w-full font-oswald px-10  duration-300  `}
+        className={`flex justify-between items-end h-16 w-full font-oswald px-10  duration-300 `}
       >
         <Cart />
         <div className="flex items-center gap-5 text-white">
           <button onClick={handleMode}>Mode</button>
 
-          <Link to="/" className="text-white">Home</Link>
-          <Link to="/" className="text-white">Products</Link>
-          <Link to="/" className="text-white">Find Store</Link>
+          <Link to="/">Home</Link>
+          <Link to="/">Products</Link>
+          <Link to="/">Find Store</Link>
           <Link
             to="/"
-            className="p-2  hover:bg-black duration-300  hover:text-white rounded-full border border-white relative"
+            className="p-2  hover:bg-black duration-300  hover:text-white rounded-full relative"
           >
             <BsSuitHeart />
 
@@ -35,13 +33,13 @@ function NavBar() {
             </div>
           </Link>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 text-white">
           <Link to="/">Blog</Link>
           <Link to="/">About Us</Link>
           <Link to="/">Contact</Link>
           <button
             onClick={handleShowCart}
-            className="p-2  hover:bg-black  hover:text-white rounded-full duration-300 border border-white relative"
+            className="p-2  hover:bg-black  hover:text-white rounded-full duration-300 relative"
           >
             <BsHandbag />
 

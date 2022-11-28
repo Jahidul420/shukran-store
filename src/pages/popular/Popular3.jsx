@@ -11,7 +11,7 @@ const Popular3 = () => {
 
   // bg-[#570A57]
   return (
-    <div className={` px-40 py-32 ${theme.background} mix-blend-difference `}>
+    <div className={` px-40 py-32 ${theme.background} `}>
       <div className={` text-center ${theme.text} font-austin text-5xl`}>
         <Title
           title="OUR POPULARS POPULAR PRODUCTS"
@@ -41,7 +41,7 @@ const PopularCart = ({ product }) => {
   return (
     <div className=" w-full rounded-xl  bg-transparent relative group">
       <div
-        className={`${theme.popularBg} backdrop-blur-lg h-[460px] w-[450px] absolute -top-8 -left-6 rounded-full opacity-0 group-hover:opacity-100 duration-200 group-hover:scale-110`}
+        className={`${theme.popularBg} h-[460px] w-[450px] absolute -top-8 -left-6 rounded-full opacity-0 group-hover:opacity-100 duration-200 group-hover:scale-110`}
       ></div>
       <div className="relative">
         <div className="w-full h-[400px]">

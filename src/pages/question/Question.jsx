@@ -40,7 +40,7 @@ const {theme} = useContext(StoreContext)
           </SplideSlide>
           <SplideSlide>
             <div className="border h-auto w-[380px] p-14 text-center">
-              <p className="text-sm font-semibold">QUESTION NO 01</p>
+              <p className="text-sm font-semibold">QUESTION NO 02</p>
               <h2 className="text-2xl text-semibold font-austin py-2">
                 What is Chinigura Rice
               </h2>
@@ -53,7 +53,7 @@ const {theme} = useContext(StoreContext)
           </SplideSlide>
           <SplideSlide>
             <div className="border h-auto w-[380px] p-14 text-center">
-              <p className="text-sm font-semibold">QUESTION NO 01</p>
+              <p className="text-sm font-semibold">QUESTION NO 03</p>
               <h2 className="text-2xl text-semibold font-austin py-2">
                 What is Chinigura Rice
               </h2>
@@ -66,7 +66,7 @@ const {theme} = useContext(StoreContext)
           </SplideSlide>
           <SplideSlide>
             <div className="border h-auto w-[380px] p-14 text-center">
-              <p className="text-sm font-semibold">QUESTION NO 01</p>
+              <p className="text-sm font-semibold">QUESTION NO 04</p>
               <h2 className="text-2xl text-semibold font-austin py-2">
                 What is Chinigura Rice
               </h2>
@@ -79,7 +79,7 @@ const {theme} = useContext(StoreContext)
           </SplideSlide>
           <SplideSlide>
             <div className="border h-auto w-[380px] p-14 text-center">
-              <p className="text-sm font-semibold">QUESTION NO 01</p>
+              <p className="text-sm font-semibold">QUESTION NO 05</p>
               <h2 className="text-2xl text-semibold font-austin py-2">
                 What is Chinigura Rice
               </h2>

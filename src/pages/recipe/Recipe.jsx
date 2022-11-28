@@ -9,7 +9,7 @@ const Recipe = () => {
 
   const { recipeArr } = useContext(StoreContext);
   return (
-    <div className="h-auto w-screen py-32 text-center">
+    <div className="h-auto w-screen py-32 text-center bg-white">
       <Title
         title="THE ROYAL RECIPYS"
         subTitle="There are many recipys and items that you can enjoy with SHUKRAN Rice"

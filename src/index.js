@@ -9,9 +9,11 @@ root.render(
   <React.StrictMode>
     <StoreContextProvider>
       <BrowserRouter>
-      <App />
-    </BrowserRouter>
+       
+      
+          <App />
+
+      </BrowserRouter>
     </StoreContextProvider>
-    
   </React.StrictMode>
 );

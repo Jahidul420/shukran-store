@@ -1,36 +1,62 @@
-import { motion } from "framer-motion";
 import React from "react";
-import rice from "../../assets/rice.mp4";
+import {
+  AiFillYoutube,
+  AiOutlineInstagram,
+  AiOutlineTwitter
+} from "react-icons/ai";
+import { BsFacebook } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import shukranadd from "../../assets/ShukranAdd.mp4";
 import logo from "../../assets/shukranLogo.png";
+
 const Banner = () => {
   return (
-    <div className=" -mt-16 relative h-[100vh] w-full mix-blend-difference">
+    <div className=" -mt-16 relative h-[100vh] w-full overflow-hidden">
       <video
-        src={rice}
+        src={shukranadd}
         autoPlay
         muted
         loop
-        className=" object-cover h-full w-full"
+        className=" object-cover h-full scale-110 w-full"
       ></video>
 
-      <div className="bg-black/50 absolute top-0 left-0 w-full h-full z-5"></div>
-      <div className=" absolute top-0 left-0 h-full w-full space-y-32">
-        <div className="h-20 mt-5">
-          <img src={logo} alt="" className="h-full m-auto object-cover" />
+      <div className="bg-black/70 absolute top-0 left-0 w-full h-full z-5"></div>
+      <div className="h-20 mt-5 absolute top-0 left-0 w-full">
+        <img src={logo} alt="" className="h-full mx-auto object-cover" />
+      </div>
+      <div className=" absolute top-0 left-0 h-full w-full text-white px-10">
+        <div className="h-[80%] flex flex-col justify-center font-austin">
+          <h2 className="text-4xl ">SHUKRAN</h2>
+          <h1 className="text-8xl font-medium">
+            GRATITUDE <br></br> INBOUND
+          </h1>
         </div>
-        <div className="text-center w-[85%] m-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-[80px] text-white font-austin font-medium tracking-tighter">
-              WHAT ARE YOU GREATEFUL FOR TODAY?
-            </h2>
-            <button className="px-10 py-4 mt-20 bg-white  text-black rounded-full hover:scale-110 duration-500">
-              FIND MORE ABOUT US
-            </button>
-          </motion.div>
+        <div className="h-[20%] w-full  flex justify-between items-center text-sm">
+          <div className="w-3/6 flex mr-40 space-x-6">
+            <div className="space-y-3">
+              <p className="text-xl font-semibold">Culture Festival </p>
+              <p className="text-xs">11 / 20 / 2023 </p>
+            </div>
+            <div className="h-16 bg-white w-[2px] "></div>
+            <p className="w-3/6">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+            </p>
+          </div>
+          <div className="w-2/6 flex items-center gap-x-8 text-2xl justify-end">
+            <Link to="/">
+              <BsFacebook />
+            </Link>{" "}
+            <Link to="/">
+              <AiFillYoutube />
+            </Link>{" "}
+            <Link to="/">
+              <AiOutlineInstagram />
+            </Link>{" "}
+            <Link to="/">
+              <AiOutlineTwitter />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
