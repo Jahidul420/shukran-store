@@ -7,7 +7,7 @@ import StoreContext from "../../context/StoreContext";
 
 const Recipe = () => {
 
-  const { recipeArr } = useContext(StoreContext);
+  const { recepes, handleViewRecepi } = useContext(StoreContext);
   return (
     <div className="h-auto w-screen py-32 text-center bg-white">
       <Title
@@ -26,9 +26,9 @@ const Recipe = () => {
             gap: "30rem",
           }}
         >
-          {recipeArr.map((recipe, index) => (
+          {recepes.map((recipe, index) => (
             <SplideSlide key={index}>
-              <Link to="/">
+              <Link to="/recipe" onClick={() => handleViewRecepi(recipe)}>
                 <RecipeCard recipe={recipe} />
               </Link>
             </SplideSlide>
@@ -55,7 +55,7 @@ const RecipeCard = ({ recipe }) => {
       <div className=" text-center w-5/6 mx-auto font-austin space-y-3">
         <button className="text-xs font-roboto mt-4">READ MORE</button>
         <h2 className="text-3xl">{recipe.name}</h2>
-        <p className="">{recipe.discription}</p>
+        <p className="cutoffText	">{recipe.discription}</p>
       </div>
     </div>
   );

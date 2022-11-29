@@ -5,8 +5,10 @@ import { TbCurrencyTaka } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import Title from "../../component/Title";
 import StoreContext from "../../context/StoreContext";
+import ThemeContext from "../../context/ThemeContext";
 const Products = () => {
-  const { products, addToCart, viewProduct, theme } = useContext(StoreContext);
+  const { products, addToCart, viewProduct } = useContext(StoreContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <div
       className={`${
@@ -74,7 +76,7 @@ const Products = () => {
 export default Products;
 
 const ProductImage = ({ image }) => {
-  const { theme } = useContext(StoreContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <div className=" w-[60%]">
       <div
@@ -118,7 +120,8 @@ const WishAndShare = ({ product }) => {
 };
 
 const PriceAndKgsDiv = ({ product }) => {
-  const { handleKgAndPrice, theme } = useContext(StoreContext);
+  const { handleKgAndPrice } = useContext(StoreContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className="flex items-center text-2xl font-oswald">

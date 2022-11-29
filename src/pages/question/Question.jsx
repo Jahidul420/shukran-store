@@ -2,11 +2,11 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 // import "@splidejs/splide/dist/css/splide.min.css";
 import "@splidejs/react-splide/css";
 import React, { useContext } from "react";
-import StoreContext from "../../context/StoreContext";
+import ThemeContext from "../../context/ThemeContext";
 
 const Question = () => {
 
-const {theme} = useContext(StoreContext)
+const {theme} = useContext(ThemeContext)
   return (
     <div className={`${theme.background + " " + theme.text} w-full h-auto py-40`}>
       <div className=" w-[50%] mx-auto text-[100px] font-austin text-center">
@@ -22,7 +22,7 @@ const {theme} = useContext(StoreContext)
             gap: "27rem",
             pagination: false,
             padding: 100,
-            
+            type: "loop"
           }}
         >
           <SplideSlide>

@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { BsHandbag, BsSuitHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import StoreContext from "../context/StoreContext";
+import ThemeContext from "../context/ThemeContext";
 import Cart from "./Cart";
 function NavBar() {
-  const { cart, wish, handleShowCart, handleMode } = useContext(StoreContext);
+  const { cart, wish, handleShowCart } = useContext(StoreContext);
+  const { handleMode } = useContext(ThemeContext);
 
   return (
     <div className={` bg-transparent sticky top-0 z-50 duration-300`}>

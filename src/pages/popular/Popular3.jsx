@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 import { FaStar } from "react-icons/fa";
-
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { TbCurrencyTaka } from "react-icons/tb";
 import Title from "../../component/Title";
 import StoreContext from "../../context/StoreContext";
+import ThemeContext from "../../context/ThemeContext";
 const Popular3 = () => {
-  const { products, theme } = useContext(StoreContext);
+  const { products } = useContext(StoreContext);
+  const { theme } = useContext(ThemeContext);
 
   // bg-[#570A57]
   return (
@@ -37,7 +38,8 @@ const Popular3 = () => {
 export default Popular3;
 
 const PopularCart = ({ product }) => {
-  const { addToCart, theme } = useContext(StoreContext);
+  const { addToCart } = useContext(StoreContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <div className=" w-full rounded-xl  bg-transparent relative group">
       <div

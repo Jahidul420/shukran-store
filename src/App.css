@@ -13,3 +13,11 @@
 body {
   scroll-behavior: smooth;
 }
+
+.cutoffText {
+  --max-lines: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines);
+}
