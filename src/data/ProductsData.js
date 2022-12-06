@@ -9,7 +9,7 @@ import njh from "../assets/png/najirshail.png";
 const productsArr = [
   {
     id: 100,
-    name: "Dinajpuri Classic Nahirshil Rice",
+    name: "Nahirshil Rice",
     tagLing: "DINAJPUR PLUM POWDER",
     quantity: 1,
     image: njh,
@@ -25,7 +25,7 @@ const productsArr = [
   },
   {
     id: 101,
-    name: "Dinajpuri Classic Chinigura Rice",
+    name: "Chinigura Rice",
     tagLing: "DINAJPUR PLUM POWDER",
     quantity: 1,
     image: chg,
@@ -41,7 +41,7 @@ const productsArr = [
   },
   {
     id: 102,
-    name: "Dinajpuri Classic katari Rice",
+    name: "katari Rice",
     tagLing: "DINAJPUR PLUM POWDER",
     quantity: 1,
     image: ktr,
@@ -57,7 +57,7 @@ const productsArr = [
   },
   {
     id: 103,
-    name: "Dinajpuri Classic Miniket Rice",
+    name: "Miniket Rice",
     tagLing: "DINAJPUR PLUM POWDER",
     quantity: 1,
     image: min,
