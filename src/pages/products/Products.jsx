@@ -1,146 +1,99 @@
 import React, { useContext } from "react";
-import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
-import { HiOutlineShare } from "react-icons/hi";
+import {
+  BsFillShareFill,
+  BsFillSuitHeartFill,
+  BsSuitHeartFill
+} from "react-icons/bs";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import Title from "../../component/Title";
 import StoreContext from "../../context/StoreContext";
-import ThemeContext from "../../context/ThemeContext";
+import Nav from "../../global/Nav";
+import Footer from "../footer/Footer";
 const Products = () => {
-  const { products, addToCart, viewProduct } = useContext(StoreContext);
-  const { theme } = useContext(ThemeContext);
-  return (
-    <div
-      className={`${
-        theme.text + " " + theme.background
-      } px-14 py-32 h-auto w-full`}
-    >
-      <Title
-        title="MEET THE SHUKRAN GREAT PRODUCTS."
-        subTitle="100% Australian. 100% natural. The Queen Garnet plum has been lovingly
-          cultivated to be ‘the queen of antioxidants’. The perfect sweet union
-          of taste and wellbeing, it’s cherished by nutritionists and worshipped
-          by foodies."
-      />
+  const { products } = useContext(StoreContext);
 
-      <div className=" relative h-auto w-full">
+  return (
+    <div className={`bg-white h-full w-full`}>
+      <Nav />
+      <div className=" grid grid-cols-4 gap-10 gap-y-20 p-10 ">
         {products.map((product, index) => (
-          <div
-            className={` flex ${
-              index % 2 === 0 ? null : "flex-row-reverse ml-auto"
-            } h-[700px] max-w-7xl items-center justify-between gap-20`}
-            key={product.id}
-          >
-            <ProductImage image={product.image} />
-            <div className="w-[40%] ">
-              <div className="space-y-5 ">
-                <div className="">
-                  <Link
-                    to="/product"
-                    onClick={() => viewProduct(product)}
-                    className="text-5xl font-medium font-lora"
-                  >
-                    {product.name}
-                    <p className="text-lg mt-2 font-medium font-austin">
-                      {product.tagLing}
-                    </p>
-                  </Link>
-                </div>
-                <PriceAndKgsDiv product={product} />
-                <p className="text-md pb-2 mr-5 text-justify font-roboto">
-                  {product.discription}
-                </p>
-                <WishAndShare product={product} />
-                <div className="flex items-center gap-5 font-oswald text-sm">
-                  <button
-                    className={`border-2 ${theme.button1} rounded-full px-8 py-[10px] hover:scale-110 duration-300`}
-                  >
-                    BUY NOW
-                  </button>
-                  <button
-                    className={` border-2 ${theme.button2} rounded-full px-8 py-[10px] hover:scale-110 duration-300 `}
-                    onClick={() => addToCart(product)}
-                  >
-                    ADD TO CART
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div key={index}>
+            <ProductCard product={product} />
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
 
 export default Products;
 
-const ProductImage = ({ image }) => {
-  const { theme } = useContext(ThemeContext);
+const ProductCard = ({ product }) => {
+  const { handleWishList, handleKgAndPrice, addToCart } =
+    useContext(StoreContext);
   return (
-    <div className=" w-[60%]">
-      <div
-        className={` p-5 h-[630px] w-[620px] ${theme.productBg} rounded-full  relative group mx-auto`}
-      >
-        <div
-          className={`duration-300 group-hover:scale-105 h-full w-full  rounded-full ${theme.productBg} absolute top-0 left-0 transition-all`}
-        ></div>
-        <img
-          src={image}
-          alt=""
-          className="h-full w-full relative object-cover "
-        />
-      </div>
-    </div>
-  );
-};
-
-const WishAndShare = ({ product }) => {
-  const { handleWishList } = useContext(StoreContext);
-  return (
-    <div className="flex items-center gap-5 text-xl">
-      <Link to="/product" className="text-xs underline">
-        LEARN MORE
-      </Link>
-      <button>
-        {product.wish ? (
-          <BsSuitHeartFill
-            className=" text-rose-500 duration-300"
-            onClick={() => handleWishList(product, false)}
+    <div className="h-[500px] w-full overflow-hidden relative">
+      <div className=" relative h-[70%] bg-[#fafafa] rounded-md">
+        <Link to="/">
+          <img
+            src={product.image}
+            alt=""
+            className="h-full w-full object-cover"
           />
-        ) : (
-          <BsSuitHeart onClick={() => handleWishList(product, true)} />
-        )}
-      </button>
-      <button className=" hover:text-sky-500 focus:text-sky-500 duration-300">
-        <HiOutlineShare />
-      </button>
-    </div>
-  );
-};
-
-const PriceAndKgsDiv = ({ product }) => {
-  const { handleKgAndPrice } = useContext(StoreContext);
-  const { theme } = useContext(ThemeContext);
-
-  return (
-    <div className="flex items-center text-2xl font-oswald">
-      <TbCurrencyTaka />
-      <p className="w-20">
-        {product.priceAndKgs.map((item) => (item.active ? item.price : null))}
-      </p>
-      <div className="text-sm space-x-5 ml-5 font-normal font-roboto">
-        {product.priceAndKgs.map((item, index) => (
-          <button
-            className={`py-[2px] px-2 border rounded-full ${
-              item.active ? theme.button1 : ""
-            } duration-500`}
-            key={index}
-            onClick={() => handleKgAndPrice(product, item)}
-          >
-            {item.kg} kg
+        </Link>
+        <div className=" w-full absolute bottom-2 px-3 left-0 flex justify-between text-xl text-gray-300">
+          <button className=" hover:text-sky-500 duration-300">
+            <BsFillShareFill />
           </button>
-        ))}
+          <button>
+            {product.wish ? (
+              <BsSuitHeartFill
+                className=" text-rose-500 duration-300"
+                onClick={() => handleWishList(product, false)}
+              />
+            ) : (
+              <BsFillSuitHeartFill
+                onClick={() => handleWishList(product, true)}
+              />
+            )}
+          </button>
+        </div>
+      </div>
+
+      <div className="text-left h-[30%] flex flex-col justify-between relative">
+        <h2 className="h-auto w-full text-base mt-2 font-roboto font-normal">
+          {product.name}
+        </h2>
+
+        <div className="flex justify-start items-center text-base font-semibold  w-auto absolute top-2 right-0">
+          <TbCurrencyTaka />
+          <p>
+            {product.priceAndKgs.map((item) =>
+              item.active ? item.price : null
+            )}
+            0
+          </p>
+        </div>
+
+        <div className="flex justify-around items-center w-full">
+          {product.priceAndKgs.map((item) => (
+            <button
+              onClick={() => handleKgAndPrice(product, item)}
+              className={`py-[2px] w-12 text-sm  rounded-md duration-500 ${
+                item.active ? "bg-black text-white" : "bg-[#fafafa]"
+              }`}
+              key={item.kg}
+            >
+              {item.kg} <span className="text-xs">KG</span>
+            </button>
+          ))}
+        </div>
+        <div>
+          <button onClick={()=>addToCart(product)} className=" w-full h-10 bg-gray-100 rounded-md font-roboto font-base">
+            Add to cart
+          </button>
+        </div>
       </div>
     </div>
   );

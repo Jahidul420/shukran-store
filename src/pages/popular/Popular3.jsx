@@ -57,7 +57,7 @@ const PopularCart = ({ product }) => {
         <div className={`text-center px-2 ${theme.text} w-full space-y-4`}>
           <h2 className="text-2xl font-austin ">{product.name}</h2>
           <ProductPrice product={product} />
-          <p className="w-[80%] m-auto text-sm font-light">
+          <p className="w-[80%] m-auto text-md font-light">
             Add a touch of royalty to any dish, with this versatile powder, made
             from nothing but
           </p>

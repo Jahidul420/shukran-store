@@ -7,21 +7,32 @@ import Cart from "./Cart";
 function NavBar() {
   const { cart, wish, handleShowCart } = useContext(StoreContext);
   const { handleMode } = useContext(ThemeContext);
+  // const [navHide, setNavHide] = useState(false);
+  // const [offset, setOffset] = useState(0);
+
+  // useEffect(() => {
+  //   const onScroll = () => setOffset(window.pageYOffset);
+  //   // clean up code
+  //   window.removeEventListener("scroll", onScroll);
+  //   window.addEventListener("scroll", onScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
 
   return (
-    <div className={` bg-transparent sticky top-0 z-50 duration-300`}>
+    <div
+      className={`duration-700 sticky top-0 z-40 bg-black/40 backdrop-blur-xl`}
+    >
       <div
-        className={`flex justify-between items-end h-16 w-full font-oswald px-10  duration-300 `}
+        className={`flex justify-between items-center h-16 w-full font-oswald px-10  duration-300`}
       >
         <Cart />
         <div className="flex items-center gap-5 text-white">
           <button onClick={handleMode}>Mode</button>
-
           <Link to="/">Home</Link>
-          <Link to="/">Products</Link>
+          <Link to="/allproducts">Products</Link>
           <Link to="/">Find Store</Link>
           <Link
-            to="/"
+            to="/profile"
             className="p-2  hover:bg-black duration-300  hover:text-white rounded-full relative"
           >
             <BsSuitHeart />
@@ -36,7 +47,7 @@ function NavBar() {
           </Link>
         </div>
         <div className="flex items-center gap-5 text-white">
-          <Link to="/">Blog</Link>
+          <Link to="/profile">Profile</Link>
           <Link to="/">About Us</Link>
           <Link to="/">Contact</Link>
           <button
@@ -65,3 +76,13 @@ function NavBar() {
 }
 
 export default NavBar;
+
+// const [offset, setOffset] = useState(0);
+
+// useEffect(() => {
+//   const onScroll = () => setOffset(window.pageYOffset);
+//   // clean up code
+//   window.removeEventListener("scroll", onScroll);
+//   window.addEventListener("scroll", onScroll, { passive: true });
+//   return () => window.removeEventListener("scroll", onScroll);
+// }, []);

@@ -11,7 +11,7 @@ const recipeArr = [
     name: "Fish with rice",
     discription:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In excepturi necessitatibus animi officia corrupti laudantium nesciunt saepe rerum dolores corporis odio quae obcaecati doloribus magnam, praesentium aliquam cumque culpa! Iste modi quis totam excepturi? Dolore accusamus, incidunt error ducimus inventore sit eveniet iusto numquam exercitationem ipsam itaque at harum quibusdam nobis fugit beatae distinctio cumque molestias illum reiciendis quisquam enim dolorem. Ex assumenda tempore blanditiis beatae quidem repellat non quos ea, velit, et quo? Quo libero deserunt dolor atque dolore aperiam velit sapiente voluptatum veniam blanditiis? Atque qui iure quaerat rem quia suscipit esse incidunt possimus, quasi laudantium optio temporibus nulla ipsam laborum aliquam fugiat provident, deserunt, voluptas neque praesentium labore sequi. Aspernatur fugiat blanditiis dolorem assumenda debitis explicabo reprehenderit, laborum impedit dolor, modi alias illum dolorum quae culpa nisi corporis? Veniam provident nisi ab eos doloremque iure sequi, magnam cupiditate libero odit, tenetur iste consequatur accusantium, perferendis consectetur similique ipsam praesentium fugiat! Soluta, doloribus sequi! Suscipit magni esse cupiditate labore animi consequuntur dolorum iure quae sit, ullam omnis ad nesciunt nam! Tempore sunt ea temporibus rem pariatur dolor perspiciatis maiores adipisci magnam deserunt facere quibusdam sed impedit velit, reiciendis numquam fugiat delectus quaerat. Labore quas in eveniet earum autem.",
-    ingrediant: [
+    ingredients: [
       "Sliced avocado",
       "1 bay leaf",
       "1/2 cup bittersweet chocolate chips (I like Ghirardelli)",
@@ -36,7 +36,7 @@ const recipeArr = [
     name: "Khichuri Buna",
     discription:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In excepturi necessitatibus animi officia corrupti laudantium nesciunt saepe rerum dolores corporis odio quae obcaecati doloribus magnam, praesentium aliquam cumque culpa! Iste modi quis totam excepturi? Dolore accusamus, incidunt error ducimus inventore sit eveniet iusto numquam exercitationem ipsam itaque at harum quibusdam nobis fugit beatae distinctio cumque molestias illum reiciendis quisquam enim dolorem. Ex assumenda tempore blanditiis beatae quidem repellat non quos ea, velit, et quo? Quo libero deserunt dolor atque dolore aperiam velit sapiente voluptatum veniam blanditiis? Atque qui iure quaerat rem quia suscipit esse incidunt possimus, quasi laudantium optio temporibus nulla ipsam laborum aliquam fugiat provident, deserunt, voluptas neque praesentium labore sequi. Aspernatur fugiat blanditiis dolorem assumenda debitis explicabo reprehenderit, laborum impedit dolor, modi alias illum dolorum quae culpa nisi corporis? Veniam provident nisi ab eos doloremque iure sequi, magnam cupiditate libero odit, tenetur iste consequatur accusantium, perferendis consectetur similique ipsam praesentium fugiat! Soluta, doloribus sequi! Suscipit magni esse cupiditate labore animi consequuntur dolorum iure quae sit, ullam omnis ad nesciunt nam! Tempore sunt ea temporibus rem pariatur dolor perspiciatis maiores adipisci magnam deserunt facere quibusdam sed impedit velit, reiciendis numquam fugiat delectus quaerat. Labore quas in eveniet earum autem.",
-    ingrediant: [
+    ingredients: [
       "Sliced avocado",
       "1 bay leaf",
       "1/2 cup bittersweet chocolate chips (I like Ghirardelli)",
@@ -61,7 +61,7 @@ const recipeArr = [
     name: "Morok Polawo",
     discription:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In excepturi necessitatibus animi officia corrupti laudantium nesciunt saepe rerum dolores corporis odio quae obcaecati doloribus magnam, praesentium aliquam cumque culpa! Iste modi quis totam excepturi? Dolore accusamus, incidunt error ducimus inventore sit eveniet iusto numquam exercitationem ipsam itaque at harum quibusdam nobis fugit beatae distinctio cumque molestias illum reiciendis quisquam enim dolorem. Ex assumenda tempore blanditiis beatae quidem repellat non quos ea, velit, et quo? Quo libero deserunt dolor atque dolore aperiam velit sapiente voluptatum veniam blanditiis? Atque qui iure quaerat rem quia suscipit esse incidunt possimus, quasi laudantium optio temporibus nulla ipsam laborum aliquam fugiat provident, deserunt, voluptas neque praesentium labore sequi. Aspernatur fugiat blanditiis dolorem assumenda debitis explicabo reprehenderit, laborum impedit dolor, modi alias illum dolorum quae culpa nisi corporis? Veniam provident nisi ab eos doloremque iure sequi, magnam cupiditate libero odit, tenetur iste consequatur accusantium, perferendis consectetur similique ipsam praesentium fugiat! Soluta, doloribus sequi! Suscipit magni esse cupiditate labore animi consequuntur dolorum iure quae sit, ullam omnis ad nesciunt nam! Tempore sunt ea temporibus rem pariatur dolor perspiciatis maiores adipisci magnam deserunt facere quibusdam sed impedit velit, reiciendis numquam fugiat delectus quaerat. Labore quas in eveniet earum autem.",
-    ingrediant: [
+    ingredients: [
       "Sliced avocado",
       "1 bay leaf",
       "1/2 cup bittersweet chocolate chips (I like Ghirardelli)",
@@ -86,7 +86,7 @@ const recipeArr = [
     name: "White Polawo",
     discription:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In excepturi necessitatibus animi officia corrupti laudantium nesciunt saepe rerum dolores corporis odio quae obcaecati doloribus magnam, praesentium aliquam cumque culpa! Iste modi quis totam excepturi? Dolore accusamus, incidunt error ducimus inventore sit eveniet iusto numquam exercitationem ipsam itaque at harum quibusdam nobis fugit beatae distinctio cumque molestias illum reiciendis quisquam enim dolorem. Ex assumenda tempore blanditiis beatae quidem repellat non quos ea, velit, et quo? Quo libero deserunt dolor atque dolore aperiam velit sapiente voluptatum veniam blanditiis? Atque qui iure quaerat rem quia suscipit esse incidunt possimus, quasi laudantium optio temporibus nulla ipsam laborum aliquam fugiat provident, deserunt, voluptas neque praesentium labore sequi. Aspernatur fugiat blanditiis dolorem assumenda debitis explicabo reprehenderit, laborum impedit dolor, modi alias illum dolorum quae culpa nisi corporis? Veniam provident nisi ab eos doloremque iure sequi, magnam cupiditate libero odit, tenetur iste consequatur accusantium, perferendis consectetur similique ipsam praesentium fugiat! Soluta, doloribus sequi! Suscipit magni esse cupiditate labore animi consequuntur dolorum iure quae sit, ullam omnis ad nesciunt nam! Tempore sunt ea temporibus rem pariatur dolor perspiciatis maiores adipisci magnam deserunt facere quibusdam sed impedit velit, reiciendis numquam fugiat delectus quaerat. Labore quas in eveniet earum autem.",
-    ingrediant: [
+    ingredients: [
       "Sliced avocado",
       "1 bay leaf",
       "1/2 cup bittersweet chocolate chips (I like Ghirardelli)",
@@ -111,7 +111,7 @@ const recipeArr = [
     name: "Jorda ",
     discription:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In excepturi necessitatibus animi officia corrupti laudantium nesciunt saepe rerum dolores corporis odio quae obcaecati doloribus magnam, praesentium aliquam cumque culpa! Iste modi quis totam excepturi? Dolore accusamus, incidunt error ducimus inventore sit eveniet iusto numquam exercitationem ipsam itaque at harum quibusdam nobis fugit beatae distinctio cumque molestias illum reiciendis quisquam enim dolorem. Ex assumenda tempore blanditiis beatae quidem repellat non quos ea, velit, et quo? Quo libero deserunt dolor atque dolore aperiam velit sapiente voluptatum veniam blanditiis? Atque qui iure quaerat rem quia suscipit esse incidunt possimus, quasi laudantium optio temporibus nulla ipsam laborum aliquam fugiat provident, deserunt, voluptas neque praesentium labore sequi. Aspernatur fugiat blanditiis dolorem assumenda debitis explicabo reprehenderit, laborum impedit dolor, modi alias illum dolorum quae culpa nisi corporis? Veniam provident nisi ab eos doloremque iure sequi, magnam cupiditate libero odit, tenetur iste consequatur accusantium, perferendis consectetur similique ipsam praesentium fugiat! Soluta, doloribus sequi! Suscipit magni esse cupiditate labore animi consequuntur dolorum iure quae sit, ullam omnis ad nesciunt nam! Tempore sunt ea temporibus rem pariatur dolor perspiciatis maiores adipisci magnam deserunt facere quibusdam sed impedit velit, reiciendis numquam fugiat delectus quaerat. Labore quas in eveniet earum autem.",
-    ingrediant: [
+    ingredients: [
       "Sliced avocado",
       "1 bay leaf",
       "1/2 cup bittersweet chocolate chips (I like Ghirardelli)",
@@ -136,7 +136,7 @@ const recipeArr = [
     name: "Maton Breyany",
     discription:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In excepturi necessitatibus animi officia corrupti laudantium nesciunt saepe rerum dolores corporis odio quae obcaecati doloribus magnam, praesentium aliquam cumque culpa! Iste modi quis totam excepturi? Dolore accusamus, incidunt error ducimus inventore sit eveniet iusto numquam exercitationem ipsam itaque at harum quibusdam nobis fugit beatae distinctio cumque molestias illum reiciendis quisquam enim dolorem. Ex assumenda tempore blanditiis beatae quidem repellat non quos ea, velit, et quo? Quo libero deserunt dolor atque dolore aperiam velit sapiente voluptatum veniam blanditiis? Atque qui iure quaerat rem quia suscipit esse incidunt possimus, quasi laudantium optio temporibus nulla ipsam laborum aliquam fugiat provident, deserunt, voluptas neque praesentium labore sequi. Aspernatur fugiat blanditiis dolorem assumenda debitis explicabo reprehenderit, laborum impedit dolor, modi alias illum dolorum quae culpa nisi corporis? Veniam provident nisi ab eos doloremque iure sequi, magnam cupiditate libero odit, tenetur iste consequatur accusantium, perferendis consectetur similique ipsam praesentium fugiat! Soluta, doloribus sequi! Suscipit magni esse cupiditate labore animi consequuntur dolorum iure quae sit, ullam omnis ad nesciunt nam! Tempore sunt ea temporibus rem pariatur dolor perspiciatis maiores adipisci magnam deserunt facere quibusdam sed impedit velit, reiciendis numquam fugiat delectus quaerat. Labore quas in eveniet earum autem.",
-    ingrediant: [
+    ingredients: [
       "Sliced avocado",
       "1 bay leaf",
       "1/2 cup bittersweet chocolate chips (I like Ghirardelli)",

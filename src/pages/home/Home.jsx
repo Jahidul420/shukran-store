@@ -1,21 +1,20 @@
 import React from "react";
-import NavBar from "../../global/NavBar";
+import Nav from "../../global/Nav";
 import Banner from "../banner/Banner";
 import Footer from "../footer/Footer";
 import MapBanner from "../mapbanner/MapBanner";
 import PartnarShip from "../partnarship/PartnarShip";
 import Popular3 from "../popular/Popular3";
-import Products from "../products/Products";
+import HomeProducts from "../products/HomeProducts";
 import Question from "../question/Question";
 import Recipe from "../recipe/Recipe";
-
 const Home = () => {
   return (
     <div className="scroll-smooth">
-      <NavBar />
+      <Nav />
       <Banner />
       <Popular3 />
-      <Products />
+      <HomeProducts />
       <MapBanner />
       <Question />
       <Recipe />

@@ -7,11 +7,10 @@ import {
 import { BsFacebook } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import shukranadd from "../../assets/ShukranAdd.mp4";
-import logo from "../../assets/shukranLogo.png";
 
 const Banner = () => {
   return (
-    <div className=" -mt-16 relative h-[100vh] w-full overflow-hidden">
+    <div className=" -mt-20 relative h-[100vh] w-full overflow-hidden">
       <video
         src={shukranadd}
         autoPlay
@@ -21,14 +20,12 @@ const Banner = () => {
       ></video>
 
       <div className="bg-black/70 absolute top-0 left-0 w-full h-full z-5"></div>
-      <div className="h-20 mt-5 absolute top-0 left-0 w-full">
-        <img src={logo} alt="" className="h-full mx-auto object-cover" />
-      </div>
+
       <div className=" absolute top-0 left-0 h-full w-full text-white px-10">
         <div className="h-[80%] flex flex-col justify-center font-austin">
           <h2 className="text-4xl ">SHUKRAN</h2>
           <h1 className="text-8xl font-medium">
-            GRATITUDE <br></br> INBOUND
+            GRATITUDE <br></br> BOUND
           </h1>
         </div>
         <div className="h-[20%] w-full  flex justify-between items-center text-sm">
@@ -46,13 +43,13 @@ const Banner = () => {
           <div className="w-2/6 flex items-center gap-x-8 text-2xl justify-end">
             <Link to="/">
               <BsFacebook />
-            </Link>{" "}
+            </Link>
             <Link to="/">
               <AiFillYoutube />
-            </Link>{" "}
+            </Link>
             <Link to="/">
               <AiOutlineInstagram />
-            </Link>{" "}
+            </Link>
             <Link to="/">
               <AiOutlineTwitter />
             </Link>

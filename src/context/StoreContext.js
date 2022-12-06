@@ -103,17 +103,10 @@ export function StoreContextProvider({ children }) {
     return setShowCart(!showCart);
   };
 
-  // SITE THEMING FUNCTIONILITY
 
-  const [recepe, setRecipe] = useState([]);
-  const handleViewRecepi = (recepe) => {
-    setRecipe(recepe);
-  };
   return (
     <StoreContext.Provider
       value={{
-        recepe,
-        handleViewRecepi,
         showCart,
         products,
         wish,

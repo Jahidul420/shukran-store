@@ -19,8 +19,6 @@ const Footer = () => {
   // },[ref])
   return (
     <div className="bg-black relative">
-      
-
       <img
         src={pattern}
         alt=""

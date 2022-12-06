@@ -16,10 +16,10 @@ const PartnarShip = () => {
 
       <div className=" relative ">
         <div className="text-center w-4/6 mx-auto text-white">
-          <h1 className="text-[100px] font-austin leading-none">
+          <h1 className="text-7xl font-austin leading-none">
             FOR YOUR WELLBEING. FOR YOUR MAJESTY
           </h1>
-          <p className="py-20 text-2xl font-austin">PRODUCT PARTNERS INCLUDE</p>
+          <p className="py-10 text-2xl font-austin">PRODUCT PARTNERS INCLUDE</p>
         </div>
         <div className=" flex justify-between items-center w-4/6 mx-auto">
           <button>

@@ -6,33 +6,29 @@ import StoreContext from "../context/StoreContext";
 import CartProduct2 from "./CartProduct2";
 const Cart = () => {
   const { cart, showCart } = useContext(StoreContext);
-
+  console.log(showCart);
   return (
     <div
       className={`h-screen ${
-        showCart ? "block" : " hidden"
-      } bg-black/30 backdrop-blur-xl absolute top-0 right-0 z-50 duration-500 transition-all flex flex-col justify-between w-[420px] border-l`}
+        showCart ? " translate-x-0" : " translate-x-full"
+      } bg-black/30 backdrop-blur-2xl z-50 duration-500 transition-all flex flex-col justify-between w-[420px] border-l fixed top-0 right-0`}
     >
-      {showCart ? (
-        <>
-          <NavTopIcon />
-          <div className="px-4 font-roboto overflow-y-scroll h-full">
-            {cart.map((product, index) => (
-              <div key={index}>
-                <CartProduct2 product={product} />
-              </div>
-            ))}
+      <NavTopIcon />
+      <div className="px-4 font-roboto overflow-y-scroll h-full">
+        {cart?.map((product, index) => (
+          <div key={index}>
+            <CartProduct2 product={product} />
           </div>
-          <div className="w-full h-20 text-center flex justify-center items-center">
-            <Link
-              to={cart.length > 0 ? "/checkout" : "/"}
-              className="py-3 text-center bg-transparent border-2 border-white text-white backdrop-blur-3xl px-[170px] rounded-md"
-            >
-              Checkout
-            </Link>
-          </div>
-        </>
-      ) : null}
+        ))}
+      </div>
+      <div className="w-full h-20 text-center flex justify-center items-center">
+        <Link
+          to={cart.length > 0 ? "/checkout" : "/"}
+          className="py-3 text-center bg-transparent border-2 border-white text-white backdrop-blur-3xl px-[170px] rounded-md"
+        >
+          Checkout
+        </Link>
+      </div>
     </div>
   );
 };
