@@ -9,14 +9,14 @@ import rice2 from "../assets/rice2-min.jpg";
 import rice3 from "../assets/rice3-min.jpg";
 import rice4 from "../assets/rice4-min.jpg";
 import StoreContext from "../context/StoreContext";
-import NavBar from "../global/NavBar";
+import Nav from "../global/Nav";
 const Product = () => {
   const { product, handleKgAndPrice, addToCart, handleQuantity, removeToCart } =
     useContext(StoreContext);
 
   return (
     <div>
-      <NavBar />
+      <Nav />
       <div className="flex justify-between w-screen -mt-16 sticky scroll-smooth">
         <div className=" w-[60%] h-auto">
           <BgImage img={product.image} />

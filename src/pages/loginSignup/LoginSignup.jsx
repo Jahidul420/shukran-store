@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { BsArrowLeft, BsArrowRight, BsTwitter } from "react-icons/bs";
+import { FaFacebookF, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 import loginBg from "../../assets/rice2-min.jpg";
 const LoginSignup = () => {
   const [login, setLogin] = useState(false);
@@ -17,58 +21,225 @@ const LoginSignup = () => {
         className={`h-full w-full flex justify-between items-center  relative `}
       >
         <div
-          className={`h-[100vh] w-[50%] px-20 flex flex-col justify-center items-center text-white bg-white/30 backdrop-blur-xl fixed duration-500 ${
+          className={`h-screen w-[50%] flex justify-center items-center bg-white/10 backdrop-blur-lg fixed duration-500 ${
             login ? " translate-x-full" : ""
           } `}
         >
           {login ? (
-            <button
-              className="z-50 w-32 h-10 bg-white absolute top-0 right-0 text-black"
+            <Link to="/"
+              className="z-50 w-36 h-10 bg-white absolute top-0 right-0 text-black flex justify-center items-center gap-3 text-xl"
               onClick={handleLogin}
             >
-              Login
-            </button>
+              <span className="text-sm font-medium">Go Back</span>
+              <BsArrowRight />
+            </Link>
           ) : (
             <button
-              className="z-50 w-32 h-10 bg-white absolute top-0 left-0 text-black"
+              className="z-50 w-36 h-10 bg-white absolute top-0 left-0 text-black flex justify-center items-center gap-3 text-xl"
               onClick={handleLogin}
             >
-              Login
+              <BsArrowLeft />
+              <span className="text-sm font-medium">Go Back</span>
             </button>
           )}
 
           {login ? (
-            <h1
-              className={` text-2xl font-semibold ${
-                login ? " opacity-100" : " opacity-0"
-              } duration-500`}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-              quasi facere molestiae veritatis quisquam voluptas culpa vel
-              dolorum iusto a necessitatibus incidunt magnam doloribus repellat
-              itaque impedit. Tenetur, dicta perspiciatis.
-            </h1>
+            <div className="w-full h-auto px-20 z-50">
+              <SignUpForm />
+            </div>
           ) : (
-            <h1
-              className={` text-sm ${
-                login ? " opacity-0" : " opacity-100"
-              } duration-500`}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores minima recusandae ad sequi omnis voluptate perspiciatis
-              ducimus, quaerat iste provident ipsum officia nam aspernatur.
-              Natus ex nemo tempore debitis tenetur doloremque aspernatur
-              dignissimos laudantium qui dolore repellendus earum impedit
-              molestias delectus deleniti, quidem consequatur, ducimus rem non
-              officia! Sit, ullam.
-            </h1>
+            <div className="w-full h-auto px-32 z-50">
+              <LogInForm />
+            </div>
           )}
         </div>
-        <div className="h-full w-3/6 "></div>
-        <div className="h-full w-3/6 "></div>
+
+
+        <div className="h-full w-3/6">
+          <div
+            className={`h-full w-full flex flex-col justify-center items-center text-white space-y-16`}
+          >
+            {login ? (
+              <>
+                <h1 className="text-5xl font-austin font-semibold text-center">
+                  Already Have An <br></br> Account
+                </h1>
+                <button
+                  className="w-[250px] h-[45px] bg-white/10 backdrop-blur-xl border-2 border-white rounded-md mx-auto"
+                  onClick={handleLogin}
+                >
+                  Login
+                </button>
+              </>
+            ) : null}
+          </div>
+        </div>
+        <div className="h-full w-3/6">
+          <div
+            className={`h-full w-full flex flex-col justify-center items-center text-white space-y-16`}
+          >
+            {login ? null : (
+              <>
+                <h1 className="text-5xl font-austin font-semibold">
+                  Create An Account
+                </h1>
+                <button
+                  className="w-[250px] h-[45px] bg-white/10 backdrop-blur-xl border-2 border-white rounded-md mx-auto"
+                  onClick={handleLogin}
+                >
+                  Sign Up
+                </button>
+              </>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default LoginSignup;
+
+const LogInForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  return (
+    <div className="text-white h-full">
+      <h1 className="text-5xl font-austin font-semibold">Log In</h1>
+      <form className="my-20 space-y-10 w-full" autoComplete="off">
+        <input
+          autoFocus={true}
+          autoComplete="off"
+          type="email"
+          placeholder="Email Or Phone"
+          className="w-full h-10 border-b-2 border-white bg-transparent outline-none placeholder:text-white"
+        />
+        <div className="flex items-center border-white border-b-2">
+          <input
+            autoComplete="off"
+            type={showPassword ? "text" : "password"}
+            placeholder="Enter Your Password"
+            className="w-full h-10   bg-transparent outline-none placeholder:text-white"
+          />
+          {showPassword ? (
+            <FaRegEyeSlash
+              onClick={() => setShowPassword((preState) => !preState)}
+              className=" cursor-pointer"
+            />
+          ) : (
+            <FaRegEye
+              onClick={() => setShowPassword((preState) => !preState)}
+              className=" cursor-pointer"
+            />
+          )}
+        </div>
+      </form>
+      <div className="flex flex-col space-y-5 justify-start items-center text-center">
+        <button className="w-3/6 h-[45px] bg-white/10 backdrop-blur-xl border-2 border-white rounded-md">
+          Log In
+        </button>
+        <p>OR</p>
+        <div className=" w-3/6 h-auto flex justify-between items-center">
+          <button className="h-12 w-12 rounded-full border-2 border-white flex justify-center items-center text-2xl text-sky-500">
+            <FaFacebookF />
+          </button>
+          <button className="h-12 w-12 rounded-full border-2 border-white flex justify-center items-center text-2xl ">
+            <FcGoogle />
+          </button>
+          <button className="h-12 w-12 rounded-full border-2 border-white flex justify-center items-center text-2xl text-sky-500">
+            <BsTwitter />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const SignUpForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  return (
+    <div className="text-white h-full">
+      <h1 className="text-5xl font-austin font-semibold">Sign Up</h1>
+      <form className="my-16 space-y-10 w-full" autoComplete="on">
+        <div className="w-full flex justify-between items-center gap-x-10">
+          <input
+            autoFocus={true}
+            autoComplete="off"
+            type="text"
+            placeholder="First Name"
+            className="w-3/6 h-10 border-b-2 border-white bg-transparent outline-none placeholder:text-white"
+          />
+          <input
+            autoFocus={true}
+            autoComplete="off"
+            type="text"
+            placeholder="Last Name"
+            className="w-3/6 h-10 border-b-2 border-white bg-transparent outline-none placeholder:text-white"
+          />
+        </div>
+        <input
+          autoFocus={true}
+          autoComplete="off"
+          type="email"
+          placeholder="Email Or Phone"
+          className="w-full h-10 border-b-2 border-white bg-transparent outline-none placeholder:text-white"
+        />
+        <div className="flex items-center border-white border-b-2">
+          <input
+            autoComplete="off"
+            type={showPassword ? "text" : "password"}
+            placeholder="Create New Password"
+            className="w-full h-10   bg-transparent outline-none placeholder:text-white"
+          />
+          {showPassword ? (
+            <FaRegEyeSlash
+              onClick={() => setShowPassword((preState) => !preState)}
+              className=" cursor-pointer"
+            />
+          ) : (
+            <FaRegEye
+              onClick={() => setShowPassword((preState) => !preState)}
+              className=" cursor-pointer"
+            />
+          )}
+        </div>
+        <div className="flex items-center border-white border-b-2">
+          <input
+            autoComplete="off"
+            type={showPassword ? "text" : "password"}
+            placeholder="Confirm Password"
+            className="w-full h-10   bg-transparent outline-none placeholder:text-white"
+          />
+          {showPassword ? (
+            <FaRegEyeSlash
+              onClick={() => setShowPassword((preState) => !preState)}
+              className=" cursor-pointer"
+            />
+          ) : (
+            <FaRegEye
+              onClick={() => setShowPassword((preState) => !preState)}
+              className=" cursor-pointer"
+            />
+          )}
+        </div>
+      </form>
+
+      <div className="flex flex-col space-y-5 justify-start items-center text-center">
+        <button className="w-3/6 h-[45px] bg-white/10 backdrop-blur-xl border-2 border-white rounded-md">
+          Log In
+        </button>
+        <p>OR</p>
+        <div className=" w-3/6 h-auto flex justify-between items-center">
+          <button className="h-12 w-12 rounded-full border-2 border-white flex justify-center items-center text-2xl text-sky-500">
+            <FaFacebookF />
+          </button>
+          <button className="h-12 w-12 rounded-full border-2 border-white flex justify-center items-center text-2xl ">
+            <FcGoogle />
+          </button>
+          <button className="h-12 w-12 rounded-full border-2 border-white flex justify-center items-center text-2xl text-sky-500">
+            <BsTwitter />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};

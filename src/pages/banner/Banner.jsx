@@ -10,7 +10,7 @@ import shukranadd from "../../assets/ShukranAdd.mp4";
 
 const Banner = () => {
   return (
-    <div className=" -mt-20 relative h-[100vh] w-full overflow-hidden">
+    <div className=" -mt-16 relative h-[100vh] w-full overflow-hidden">
       <video
         src={shukranadd}
         autoPlay

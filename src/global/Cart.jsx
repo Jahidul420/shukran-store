@@ -6,7 +6,6 @@ import StoreContext from "../context/StoreContext";
 import CartProduct2 from "./CartProduct2";
 const Cart = () => {
   const { cart, showCart } = useContext(StoreContext);
-  console.log(showCart);
   return (
     <div
       className={`h-screen ${

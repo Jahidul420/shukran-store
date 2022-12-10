@@ -6,6 +6,7 @@ import {
 } from "react-icons/bs";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import Title from "../../component/Title";
 import StoreContext from "../../context/StoreContext";
 import Nav from "../../global/Nav";
 import Footer from "../footer/Footer";
@@ -15,6 +16,14 @@ const Products = () => {
   return (
     <div className={`bg-white h-full w-full`}>
       <Nav />
+      <Title
+        title="MEET THE SHUKRAN ALL GREAT PRODUCTS."
+        subTitle="100% Australian. 100% natural. The Shukran Garnet plum has been lovingly
+          cultivated to be ‘the queen of antioxidants’. The perfect sweet union
+          of taste and wellbeing, it’s cherished by nutritionists and worshipped
+          by foodies."
+      />
+
       <div className=" grid grid-cols-4 gap-10 gap-y-20 p-10 ">
         {products.map((product, index) => (
           <div key={index}>
@@ -98,3 +107,6 @@ const ProductCard = ({ product }) => {
     </div>
   );
 };
+
+
+// hello social

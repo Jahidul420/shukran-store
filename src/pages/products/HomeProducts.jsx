@@ -51,12 +51,14 @@ const HomeProducts = () => {
                   {product.discription}
                 </p>
                 <WishAndShare product={product} />
-                <div className="flex items-center gap-5 font-oswald text-sm">
-                  <button
+                <div className="flex items-center gap-5 font-roboto text-sm">
+                  <Link
+                    to="/product"
+                    onClick={() => viewProduct(product)}
                     className={`border-2 ${theme.button1} rounded-full px-8 py-[10px] hover:scale-110 duration-300`}
                   >
-                    BUY NOW
-                  </button>
+                    View Product
+                  </Link>
                   <button
                     className={` border-2 ${theme.button2} rounded-full px-8 py-[10px] hover:scale-110 duration-300 `}
                     onClick={() => addToCart(product)}
